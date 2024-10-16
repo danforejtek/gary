@@ -1,12 +1,14 @@
 import { Heading } from "@/components/heading";
+import NavBar from "@/components/navbar";
 import Image from "next/image";
+import SaveGary from "@/components/save-gary";
 
 export default function Home() {
   return (
     <main>
       <section
         id="#home"
-        className="flex flex-col items-center justify-center h-screen py-2 relative"
+        className="flex flex-col items-center justify-start h-screen py-2 relative"
       >
         <Image
           src={`/backgrounds/0.jpg`}
@@ -14,13 +16,13 @@ export default function Home() {
           className="object-cover -z-10"
           fill
         />
+        <NavBar />
         <Heading className="text-[5rem] tracking-normal font-bold">
           Save penguin Gary
         </Heading>
-        <p className="text-gary-blue text-2xl font-bold">
-          The cutest and most determined penguin in the crypto world
-        </p>
+        <SaveGary />
       </section>
+
       <section
         id="#about"
         className="flex flex-col items-center justify-center h-screen py-2 relative"
@@ -32,7 +34,7 @@ export default function Home() {
           className="object-cover -z-10"
           fill
         />
-        <Heading className="text-6xl font-bold">Gary's story</Heading>
+        <Heading className="text-6xl font-bold">Gary&apos;s story</Heading>
       </section>
     </main>
   );
