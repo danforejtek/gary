@@ -3,7 +3,7 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { Baloo_Bhai_2 } from "next/font/google";
 import { WalletProviders } from "@/components/buy-gara-widget/wallet-providers";
-import "./globals.css";
+import "../globals.css";
 import { Providers } from "@/app/[locale]/providers";
 
 const balooBhai = Baloo_Bhai_2({
@@ -26,10 +26,11 @@ export default function RootLayout({
   const messages = useMessages();
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${balooBhai.variable} antialiased`}>
         <Providers locale={"en"} messages={messages}>
-          <WalletProviders locale={"en"}>{children}</WalletProviders>
+          {children}
+          {/* <WalletProviders locale={"en"}>{children}</WalletProviders> */}
         </Providers>
       </body>
     </html>

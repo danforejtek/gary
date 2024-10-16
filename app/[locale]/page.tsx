@@ -2,6 +2,7 @@ import { Heading } from "@/components/heading";
 import NavBar from "@/components/navbar";
 import Image from "next/image";
 import SaveGary from "@/components/save-gary";
+import { BuyGara } from "@/components/buy-gara-widget/widget";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
           fill
         />
         <Heading className="text-6xl font-bold">Gary&apos;s story</Heading>
+        {/* <BuyGara /> */}
       </section>
     </main>
   );

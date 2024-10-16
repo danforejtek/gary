@@ -1,3 +1,5 @@
+"use client"
+import CountdownTimer from "@/components/countdown-timer";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import React from "react";
@@ -11,7 +13,6 @@ const SaveGary = () => {
       <div className="flex h-[340px]">
         <p className="text-gary-blue text-2xl font-bold mt-20">
           Gary doesnt have much time to left
-          <div className="h-16 border-2 border-red-300 mt-4">HODINY</div>
         </p>
         <Image
           className="mt-8 absolute right-80 -z-10"
@@ -21,6 +22,7 @@ const SaveGary = () => {
           height={396}
         />
       </div>
+        <CountdownTimer />
       <div className="mt-52 flex flex-col items-center">
         <p className="text-white font-normal text-4xl">
           Find out how you can help Gary
