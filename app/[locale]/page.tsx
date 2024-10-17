@@ -2,6 +2,7 @@ import { Heading } from "@/components/heading"
 import NavBar from "@/components/navbar"
 import Image from "next/image"
 import SaveGary from "@/components/save-gary"
+import HelpGary from "@/components/help-gary"
 
 export default function Home() {
   return (
@@ -18,6 +19,10 @@ export default function Home() {
         <Image src={`/backgrounds/1.jpg`} alt="Cover Image" className="-z-10 object-cover" fill />
         <Heading className="text-6xl font-bold">Gary&apos;s story</Heading>
         {/* <BuyGara /> */}
+      </section>
+
+      <section id="#help-gary" className="min-h-screen bg-[#061022]">
+        <HelpGary />
       </section>
     </main>
   )

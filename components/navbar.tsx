@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const links = [
   { name: "Gary's story", href: "#about" },
-  { name: "Help Gary", href: "" },
+  { name: "Help Gary", href: "#help-gary" },
   { name: "Earn with Gary", href: "" },
   { name: "Join us!", href: "" },
   { name: "FAQ", href: "" },
