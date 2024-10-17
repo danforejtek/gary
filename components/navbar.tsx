@@ -1,35 +1,33 @@
-import Link from "next/link";
-import React from "react";
-import Image from "next/image";
+import Link from "next/link"
+import React from "react"
+import Image from "next/image"
 
 const links = [
-  "Gary's story",
-  "Help Gary",
-  "Earn with Gary",
-  "Join us!",
-  "FAQ",
-];
+  { name: "Gary's story", href: "#about" },
+  { name: "Help Gary", href: "" },
+  { name: "Earn with Gary", href: "" },
+  { name: "Join us!", href: "" },
+  { name: "FAQ", href: "" },
+]
 
 const NavBar = () => {
   return (
-    <div className="w-full px-36 flex items-center justify-between h-16 mt-5 mb-36">
-      <div className="bg-yellow-300 rounded-full w-14 h-14">
+    <div className="mb-36 mt-5 flex h-16 w-full items-center justify-between px-36">
+      <div className="h-14 w-14 rounded-full bg-yellow-300">
         <Image src="/logo.png" alt="Gary" width={60} height={60} />
       </div>
       <nav>
         <ul className="flex">
           {links.map((link) => (
-            <li key={link} className="text-white font-normal text-2xl ml-11">
-              <Link href={link}>{link}</Link>
+            <li key={link.name} className="ml-11 text-2xl font-normal text-white">
+              <Link href={link.href}>{link.name}</Link>
             </li>
           ))}
         </ul>
       </nav>
-      <button className="bg-[#061022] w-48 h-9 text-[#FFAE17] font-normal text-2xl rounded-3xl">
-        Buy GARA coin
-      </button>
+      <button className="h-9 w-48 rounded-3xl bg-[#061022] text-2xl font-normal text-[#FFAE17]">Buy GARA coin</button>
     </div>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar
