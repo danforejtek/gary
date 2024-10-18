@@ -1,6 +1,7 @@
 import Link from "next/link"
 import React from "react"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
 
 const links = [
   { name: "Gary's story", href: "#about" },
@@ -12,20 +13,24 @@ const links = [
 
 const NavBar = () => {
   return (
-    <div className="flex w-full items-center justify-between py-4 container mx-auto">
-      <div className="h-14 w-14 rounded-full bg-yellow-300">
+    <div className="container mx-auto grid w-full grid-cols-[200px_1fr_200px] items-center justify-between gap-8 py-4">
+      <div className="h-14 w-14 rounded-full">
         <Image src="/logo.png" alt="Gary" width={60} height={60} />
       </div>
-      <nav>
-        <ul className="flex">
+      <nav className="flex flex-row justify-center">
+        <ul className="flex flex-row gap-2">
           {links.map((link) => (
-            <li key={link.name} className="ml-11 text-2xl font-bold text-white">
-              <Link href={link.href}>{link.name}</Link>
+            <li key={link.name}>
+              <Button variant="ghost" asChild className="text-xl font-bold text-white">
+                <Link href={link.href}>{link.name}</Link>
+              </Button>
             </li>
           ))}
         </ul>
       </nav>
-      <button className="h-9 w-48 rounded-3xl bg-[#061022] text-2xl font-bold text-[#FFAE17]">Buy GARA coin</button>
+      <div className="flex items-center justify-end">
+        <Button className="rounded-full bg-[#061022] px-4 py-2 text-xl font-bold text-[#FFAE17]">Buy GARA coin</Button>
+      </div>
     </div>
   )
 }

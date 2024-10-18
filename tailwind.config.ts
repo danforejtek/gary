@@ -1,5 +1,5 @@
-import type { Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
+import type { Config } from "tailwindcss"
+import { fontFamily } from "tailwindcss/defaultTheme"
 
 const config: Config = {
   darkMode: ["class"],
@@ -54,6 +54,9 @@ const config: Config = {
         "gary-yellow": "hsl(var(--gary-yellow))",
         "gary-blue": "hsl(var(--gary-blue))",
         "gary-light-blue": "hsl(var(--gary-light-blue))",
+        "gary-pink": "hsl(var(--gary-pink))",
+        "gary-pink-foreground": "hsl(var(--gary-pink-foreground))",
+        "gary-input-blue": "hsl(var(--gary-input-blue))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -67,5 +70,5 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
-export default config;
+}
+export default config

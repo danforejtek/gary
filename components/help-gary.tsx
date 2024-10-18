@@ -1,6 +1,7 @@
 import React from "react"
 import { Heading } from "@/components/heading"
 import GarysRoadmap from "./garys-roadmap"
+import { BuyGara } from "@/components/buy-gara-widget/widget"
 
 const HelpGary = () => {
   return (
@@ -14,7 +15,9 @@ const HelpGary = () => {
         <div className="h-[1500px] w-[926px] border-2 border-red-400">
           <GarysRoadmap />
         </div>
-        <div className="h-[788px] w-[470px] border-2 border-yellow-300 text-white">Widget</div>
+        <div className="h-[788px]">
+          <BuyGara />
+        </div>
       </div>
     </div>
   )

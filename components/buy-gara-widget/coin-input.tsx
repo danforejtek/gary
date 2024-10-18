@@ -20,7 +20,7 @@ export const CoinInput = forwardRef<
     <div className="flex flex-col">
       <div
         className={cn(
-          "flex w-full flex-row justify-between gap-4 rounded-full bg-neutral-100 px-6 py-2 ring-neutral-200 dark:bg-neutral-900 dark:ring-1 dark:ring-neutral-800"
+          "bg-gary-input-blue flex w-full flex-row justify-between gap-4 rounded-full px-6 py-2 font-bold text-gary-blue hover:bg-gary-light-blue"
         )}
       >
         <input
@@ -28,14 +28,11 @@ export const CoinInput = forwardRef<
           min="0"
           step="0.0001"
           // max={"100000"}
-          className={cn(
-            "flex-1 bg-transparent font-heading text-lg text-neutral-900 outline-none dark:text-white",
-            className
-          )}
+          className={cn("flex-1 bg-transparent font-heading text-lg text-gary-blue outline-none", className)}
           {...rest}
         />
         {showIcon ? (
-          <div className="mr-3 flex flex-row items-center justify-end gap-4 font-heading text-base font-semibold text-neutral-900 dark:text-white">
+          <div className="flex flex-row items-center justify-end gap-4 font-heading text-base font-semibold text-gary-blue">
             <Image src={`/icons/coins/${coin?.toLowerCase()}.png`} alt={coin} width={32} height={32} />
             <span className="w-[46px]">{coin}</span>
           </div>

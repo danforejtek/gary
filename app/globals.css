@@ -41,7 +41,10 @@ body {
     --radius: 0.5rem;
     --gary-blue: 219 70% 8%;
     --gary-light-blue: 201 100% 66%;
+    --gary-input-blue: 199 100% 87%;
     --gary-yellow: 39 100% 55%;
+    --gary-pink: 338 100% 56%;
+    --gary-pink-foreground: 210 40% 98%;
   }
 
   .dark {
@@ -71,7 +74,10 @@ body {
     --chart-5: 340 75% 55%;
     --gary-blue: 219 70% 8%;
     --gary-light-blue: 201 100% 66%;
+    --gary-input-blue: 199 100% 87%;
     --gary-yellow: 39 100% 55%;
+    --gary-pink: 338 100% 56%;
+    --gary-pink-foreground: 210 40% 98%;
   }
 }
 

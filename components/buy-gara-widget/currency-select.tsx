@@ -30,7 +30,7 @@ export function CurrencySelect({ form }: { form: any }) {
                     variant="outline"
                     role="combobox"
                     className={cn(
-                      "!mt-0 h-[48px] w-full justify-between ring-neutral-200 dark:bg-neutral-900 dark:ring-1 dark:ring-neutral-800",
+                      "bg-gary-input-blue !mt-0 h-[44px] w-full justify-between rounded-full border-none font-bold text-gary-blue hover:bg-gary-light-blue",
                       !field.value && "text-muted-foreground"
                     )}
                   >
