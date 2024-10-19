@@ -5,6 +5,7 @@ import SaveGary from "@/components/save-gary"
 import HelpGary from "@/components/help-gary"
 import { GarysStoryCarousel } from "@/components/garys-story/carousel"
 import EarnWithGary from "@/components/earn-with-garry"
+import SavePenguins from "@/components/save-penguins"
 
 export default function Home() {
   return (
@@ -42,11 +43,11 @@ export default function Home() {
         <Image src={`/backgrounds/0.jpg`} alt="Cover Image" className="-z-10 object-cover" fill />
         <EarnWithGary />
       </section>
-      <section className="bg-gary-blue">
-        <div>{/* todo Save penguins */}</div>
-        <div className="relative -mb-16 -mt-10 h-60 w-full">
-          <Image src={`/backgrounds/ice.svg`} alt="Cover Image" className="object-cover" fill />
-        </div>
+      <div className="relative -mb-16 -mt-10 h-60 w-full">
+        <Image src={`/backgrounds/ice.svg`} alt="Cover Image" className="object-cover" fill />
+      </div>
+      <section className="h-sceen -mt-44 flex bg-gary-blue">
+        <SavePenguins />
       </section>
     </main>
   )

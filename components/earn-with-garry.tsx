@@ -2,15 +2,14 @@ import React from "react"
 import { Heading } from "@/components/heading"
 import { Button } from "./ui/button"
 import Image from "next/image"
-import { cn } from "../lib/utils"
 
 const EarnWithGary = () => {
   return (
     <div className="flex flex-col items-center justify-normal">
-      <div className="flex flex-col items-center px-96">
+      <div className="flex flex-col items-center px-24 lg:px-40 xl:px-96">
         <Heading className="text-6xl font-bold">Earn with Gary</Heading>
-        <p className="my-5 text-5xl font-bold text-gary-blue">
-          Stake your GARA coins and earn up to <Heading className="text-5xl text-[#19FB9B]"> 35% p.a.</Heading>
+        <p className="my-5 text-4xl font-bold text-gary-blue">
+          Stake your GARA coins and earn up to <Heading className="inline text-5xl text-[#19FB9B]">35% p.a.</Heading>
         </p>
         <p className="text-center text-2xl font-bold text-gary-blue">
           Gary isn&apos;t just a cute penguin, but he&apos;s also smart and knows how to make the most money. Gary
@@ -26,7 +25,7 @@ const EarnWithGary = () => {
         </Button>
       </div>
 
-      <div className="mt-8 flex">
+      <div className="relative mt-32 flex">
         <Image
           src={`/images/earn-with-gary/money.png`}
           alt="Gary"
@@ -39,14 +38,14 @@ const EarnWithGary = () => {
           alt="Gary"
           width={248}
           height={324}
-          className="object-contain"
+          className="absolute bottom-4 left-48 object-contain"
         />
         <Image
           src={`/images/earn-with-gary/table.png`}
           alt="Gary"
           width={377}
           height={260}
-          className="object-contain"
+          className="ml-40 object-contain"
         />
       </div>
     </div>
