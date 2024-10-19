@@ -24,7 +24,7 @@ export default function Home() {
         />
       </section>
       <div className="relative -mb-12 -mt-16 h-48 w-full">
-        <Image src="/backgrounds/gradient.png" alt="Cover Image" layout="fill" />
+        <Image src="/backgrounds/gradient.png" alt="Cover Image" fill />
       </div>
       <section id="#about" className="relative h-screen w-screen">
         <GarysStoryCarousel />
@@ -35,7 +35,7 @@ export default function Home() {
         <HelpGary />
       </section>
       <div className="relative -mb-12 -mt-16 h-48 w-full">
-        <Image src="/backgrounds/gradient.png" alt="Cover Image" layout="fill" />
+        <Image src="/backgrounds/gradient.png" alt="Cover Image" fill />
       </div>
       <section id="earn" className="relative flex h-screen flex-col justify-center object-cover">
         {/* BG todo - nemáme obrázek pro tento slide, dočasně použit stejný jako na uvodním */}
