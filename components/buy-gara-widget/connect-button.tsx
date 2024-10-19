@@ -25,9 +25,9 @@ export const ConnectButton = ({ label, showBalance }) => {
                     variant="default"
                     onClick={openConnectModal}
                     type="button"
-                    className="bg-gary-pink hover:bg-gary-pink/80 dark:hover:bg-gary-pink/80 h-12 w-full border-none outline-none"
+                    className="h-12 w-full border-none bg-gary-pink outline-none hover:bg-gary-pink/80 dark:hover:bg-gary-pink/80"
                   >
-                    {label}
+                    {label}X
                   </Button>
                 )
               }

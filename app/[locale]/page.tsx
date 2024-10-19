@@ -40,9 +40,9 @@ export default function Home() {
         <Image src={`/backgrounds/0.jpg`} alt="Cover Image" className="-z-10 object-cover" fill />
         <EarnWithGary />
       </section>
-      <section className="bg-slate-400">
+      <section className="bg-gary-blue">
         <div>{/* todo Save penguins */}</div>
-        <div className="relative -mb-12 -mt-16 h-60 w-full">
+        <div className="relative -mb-16 -mt-10 h-60 w-full">
           <Image src={`/backgrounds/ice.svg`} alt="Cover Image" className="object-cover" fill />
         </div>
       </section>

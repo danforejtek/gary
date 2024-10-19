@@ -269,15 +269,15 @@ export function BuyGara({ className }: { className?: string }) {
         <TableBody className="text-base">
           <TableRow className="!border-none">
             <TableCell className="!p-1 font-heading font-bold">{t("totalTokens")}</TableCell>
-            <TableCell className="text-gary-pink !p-1 text-end font-bold">900M GARA</TableCell>
+            <TableCell className="!p-1 text-end font-bold text-gary-pink">900M GARA</TableCell>
           </TableRow>
           <TableRow className="!border-none">
             <TableCell className="!p-1 font-bold">{t("distributedTokens")}</TableCell>
-            <TableCell className="text-gary-pink !p-1 text-end font-bold">99M GARA</TableCell>
+            <TableCell className="!p-1 text-end font-bold text-gary-pink">99M GARA</TableCell>
           </TableRow>
           <TableRow className="!border-none">
             <TableCell className="!p-1 font-bold">{t("soldTokens")}</TableCell>
-            <TableCell className="text-gary-pink !p-1 text-end font-bold">2M GARA</TableCell>
+            <TableCell className="!p-1 text-end font-bold text-gary-pink">2M GARA</TableCell>
           </TableRow>
         </TableBody>
       </Table>
