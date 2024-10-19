@@ -3,6 +3,7 @@ import NavBar from "@/components/navbar"
 import Image from "next/image"
 import SaveGary from "@/components/save-gary"
 import HelpGary from "@/components/help-gary"
+import EarnWithGary from "@/components/earn-with-garry"
 
 export default function Home() {
   return (
@@ -28,8 +29,22 @@ export default function Home() {
         <Image src={`/backgrounds/1.jpg`} alt="Cover Image" className="-z-10 object-cover" fill />
         <Heading className="text-6xl font-bold">Gary&apos;s story</Heading>
       </section>
-      <section id="#help-gary" className="min-h-screen bg-[#061022]">
+      <section id="#help-gary" className="min-h-screen bg-gary-blue pb-60">
         <HelpGary />
+      </section>
+      <div className="relative -mb-12 -mt-16 h-48 w-full">
+        <Image src="/backgrounds/gradient.png" alt="Cover Image" layout="fill" />
+      </div>
+      <section id="earn" className="relative flex h-screen flex-col justify-center object-cover">
+        {/* BG todo - nemáme obrázek pro tento slide, dočasně použit stejný jako na uvodním */}
+        <Image src={`/backgrounds/0.jpg`} alt="Cover Image" className="-z-10 object-cover" fill />
+        <EarnWithGary />
+      </section>
+      <section className="bg-slate-400">
+        <div>{/* todo Save penguins */}</div>
+        <div className="relative -mb-12 -mt-16 h-60 w-full">
+          <Image src={`/backgrounds/ice.svg`} alt="Cover Image" className="object-cover" fill />
+        </div>
       </section>
     </main>
   )
