@@ -6,6 +6,7 @@ import HelpGary from "@/components/help-gary"
 import { GarysStoryCarousel } from "@/components/garys-story/carousel"
 import EarnWithGary from "@/components/earn-with-garry"
 import SavePenguins from "@/components/save-penguins"
+import Faq from "@/components/faq"
 
 export default function Home() {
   return (
@@ -48,6 +49,9 @@ export default function Home() {
       </div>
       <section className="h-sceen -mt-44 flex bg-gary-blue">
         <SavePenguins />
+      </section>
+      <section className="h-screen bg-gary-blue">
+        <Faq />
       </section>
     </main>
   )
