@@ -18,7 +18,7 @@ const faqData = [
 
 const Faq = () => (
   <div className="flex flex-col items-center justify-center">
-    <Heading className="text-left text-8xl font-bold leading-none tracking-normal">FAQ</Heading>
+    <Heading className="text-left text-6xl font-bold leading-none tracking-normal">FAQ</Heading>
     <div className="mt-20 flex flex-col gap-20">
       {faqData.map((faq, index) => (
         <div key={index} className="flex flex-col gap-4">

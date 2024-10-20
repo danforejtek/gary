@@ -33,13 +33,13 @@ export default function Home() {
         {/* <Image src={`/backgrounds/1.jpg`} alt="Cover Image" className="-z-10 object-cover" fill />
         <Heading className="text-6xl font-bold">Gary&apos;s story</Heading> */}
       </section>
-      <section id="#help-gary" className="min-h-screen bg-gary-blue pb-60">
+      <section id="#help-gary" className="bg-gary-blue pb-24">
         <HelpGary />
       </section>
-      <div className="relative -mb-12 -mt-16 h-48 w-full">
-        <Image src="/backgrounds/gradient.png" alt="Cover Image" fill />
+      <div className="relative -mb-16 -mt-16 h-48 w-full">
+        <Image src="/backgrounds/gradient2.png" alt="Cover Image" fill />
       </div>
-      <section id="earn" className="relative flex h-screen flex-col justify-center object-cover">
+      <section id="earn" className="relative flex flex-col justify-center object-cover py-24">
         {/* BG todo - nemáme obrázek pro tento slide, dočasně použit stejný jako na uvodním */}
         <Image src={`/backgrounds/0.jpg`} alt="Cover Image" className="-z-10 object-cover" fill />
         <EarnWithGary />
@@ -47,10 +47,10 @@ export default function Home() {
       <div className="relative -mb-16 -mt-10 h-60 w-full">
         <Image src={`/backgrounds/ice.svg`} alt="Cover Image" className="object-cover" fill />
       </div>
-      <section className="h-sceen -mt-44 flex bg-gary-blue">
+      <section className="-mt-44 flex bg-gary-blue">
         <SavePenguins />
       </section>
-      <section className="h-screen bg-gary-blue">
+      <section className="bg-gary-blue">
         <Faq />
       </section>
     </main>

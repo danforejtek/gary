@@ -9,7 +9,7 @@ const SavePenguins = () => {
     <div className="relative mx-auto mb-40 flex min-h-screen flex-col items-center">
       <div className="mt-60 flex gap-40 px-40">
         <div className="flex w-[714px] flex-col justify-center">
-          <Heading className="text-left text-8xl font-bold leading-none tracking-normal">Save penguins</Heading>
+          <Heading className="text-left text-6xl font-bold leading-none tracking-normal">Save penguins</Heading>
           <p className="mt-4 text-2xl font-bold text-white">
             African penguins are in serious trouble. Their numbers have plummeted  over the past century due to the 
             destruction of nesting sites,  egg poaching, oil spills, global  climate change, and competition for food

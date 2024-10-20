@@ -1,6 +1,7 @@
 import React from "react"
 import { Heading } from "@/components/heading"
 import Image from "next/image"
+import { formatAmount } from "@/lib/utils"
 
 const garysRoadMapData = [
   {
@@ -54,17 +55,17 @@ const garysRoadMapData = [
 
 const GarysRoadmap = () => (
   <div className="flex w-full flex-col text-white">
-    <div className="mb-4 flex h-44 flex-col">
+    <div className="mb-4 flex flex-col">
       {garysRoadMapData.map((item, index) => {
         const { votes, title, description, img } = item
         return (
-          <div key={index} className="flex">
-            <p className="mr-7 flex items-center justify-center">IMG kolečko</p>
+          <div key={index} className="flex flex-row gap-8">
+            <div className="flex w-20 items-center justify-center">IMG kolečko</div>
             <div className="mb-5 flex w-full items-center justify-between rounded-3xl bg-[#0D1E35]">
-              <div className="my-6 ml-11 flex w-[620px] flex-col">
-                <p className="text-xl font-bold text-gary-light-blue">{votes}</p>
-                <p className="text-4xl font-bold text-gary-yellow">{title}</p>
-                <span className="text-2xl font-bold">{description}</span>
+              <div className="flex w-[620px] flex-col px-8 py-6">
+                <p className="text-xl font-bold text-gary-light-blue">{formatAmount(votes, 0)}</p>
+                <p className="text-3xl font-bold text-gary-yellow">{title}</p>
+                <span className="text-xl font-bold">{description}</span>
               </div>
               <div className="relative mr-5 flex h-32 w-32 items-center justify-center">
                 <Image src={`/images/help-gary/${img}`} alt="Gary" fill className="object-contain" />
