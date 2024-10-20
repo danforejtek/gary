@@ -25,7 +25,7 @@ const garysRoadMapData = [
   },
   {
     votes: 5000000,
-    title: "GARY'S PROMOTION",
+    title: "GARY&apos;S PROMOTION",
     description:
       "Gary will gain more influence in the company and push listing of GARA coin on selected exchanges in the top 50.",
     img: "promotion.png",

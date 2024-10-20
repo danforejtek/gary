@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 const links = [
-  { name: "Gary's story", href: "#about" },
+  { name: "Gary&apos;s story", href: "#about" },
   { name: "Help Gary", href: "#help-gary" },
   { name: "Earn with Gary", href: "" },
   { name: "Join us!", href: "" },
