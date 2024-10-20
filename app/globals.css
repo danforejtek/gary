@@ -90,7 +90,6 @@ body {
     @apply bg-background text-foreground;
 
     @supports (-webkit-text-stroke: 3px black) {
-
       h1,
       h2,
       h3,

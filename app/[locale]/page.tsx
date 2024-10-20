@@ -11,7 +11,7 @@ import Faq from "@/components/faq"
 export default function Home() {
   return (
     <main>
-      <section id="#home" className="relative flex h-screen flex-1 flex-col items-center justify-start">
+      <section id="home" className="relative flex h-screen flex-1 flex-col items-center justify-start">
         <NavBar />
         <Image src={`/backgrounds/0.jpg`} alt="Cover Image" className="-z-10 object-cover" fill />
         <div className="flex h-full flex-1 flex-col">
@@ -28,12 +28,12 @@ export default function Home() {
       <div className="relative z-10 -mb-12 -mt-16 h-48 w-full">
         <Image src="/backgrounds/gradient.png" alt="Cover Image" fill />
       </div>
-      <section id="#about" className="relative -mt-20 h-screen w-screen">
+      <section id="about" className="relative -mt-20 h-screen w-screen">
         <GarysStoryCarousel />
         {/* <Image src={`/backgrounds/1.jpg`} alt="Cover Image" className="-z-10 object-cover" fill />
         <Heading className="text-6xl font-bold">Gary&apos;s story</Heading> */}
       </section>
-      <section id="#help-gary" className="bg-gary-blue pb-24">
+      <section id="help-gary" className="bg-gary-blue pb-24">
         <HelpGary />
       </section>
       <div className="relative -mb-16 -mt-16 h-48 w-full">
@@ -47,10 +47,10 @@ export default function Home() {
       <div className="relative -mb-16 -mt-10 h-60 w-full">
         <Image src={`/backgrounds/ice.svg`} alt="Cover Image" className="object-cover" fill />
       </div>
-      <section className="-mt-44 flex bg-gary-blue">
+      <section id="save" className="-mt-44 flex bg-gary-blue">
         <SavePenguins />
       </section>
-      <section className="bg-gary-blue">
+      <section id="faq" className="bg-gary-blue">
         <Faq />
       </section>
     </main>
