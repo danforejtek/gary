@@ -1,9 +1,27 @@
 "use client"
 
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel"
 import Image from "next/image"
+import { useCallback, useEffect, useRef, useState } from "react"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { Heading } from "@/components/heading"
 
 const slides = [
+  {
+    story: "",
+    text: "",
+    storyPosition: "absolute top-[3%] right-0 w-[500px] h-[420px]",
+    textPosition: "absolute top-[14%] left-[2%] w-[500px] h-[280px]",
+    garyPosition: "absolute bottom-0 right-[16%] w-[600px] h-[500px]",
+  },
   {
     story:
       "Gary was fired for redundancy, the company wants to change the brand and Gary, who was the model for the company logo, no longer fits into the new brand ",
@@ -22,6 +40,7 @@ const slides = [
   {
     story: "Gary is sad to have lost his job and wonders what he's going to do now that he's suddenly got an idea!",
     text: "",
+    storySide: "left",
     storyPosition: "absolute bottom-0 left-0 w-[500px] h-[420px]",
     textPosition: "absolute top-1/2 left-1/2",
     garyPosition: "absolute bottom-[4%] left-[50%] w-[266px] h-[344px]",
@@ -35,45 +54,144 @@ const slides = [
   },
 ]
 
-export function GarysStoryCarousel() {
+function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide: any; carouselApi?: CarouselApi }) {
+  const [isActive, setIsActive] = useState(false)
+  const slideRef = useRef<HTMLDivElement>(null)
+
+  const handleNext = () => {
+    if (carouselApi) {
+      carouselApi.scrollNext()
+    }
+  }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsActive(true)
+          } else {
+            setIsActive(false)
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    const currentSlide = slideRef.current
+    if (currentSlide) {
+      observer.observe(currentSlide)
+    }
+
+    return () => {
+      if (currentSlide) {
+        observer.unobserve(currentSlide)
+      }
+    }
+  }, [])
+
   return (
-    <Carousel
-      opts={{
-        loop: false,
-      }}
-    >
-      <CarouselPrevious />
-      <CarouselContent className="ml-0 h-screen w-screen">
-        {slides.map((slide, index) => {
-          const slideNumber = index + 1
-          return (
-            <CarouselItem key={slideNumber} className="relative h-full w-full pl-0">
-              <Image
-                src={`/images/story/slide${slideNumber}/bg.jpg`}
-                alt={`Slide ${slideNumber}`}
-                className="-z-20 object-cover"
-                fill
-              />
-              <div className={slide.garyPosition}>
-                <Image src={`/images/story/slide${slideNumber}/gary.png`} fill alt="Gary" className="-z-10" />
-              </div>
-              {slide.story !== "" ? (
-                <div className={slide.storyPosition}>
-                  <p className="z-10 pb-20 pl-24 pr-16 pt-28 text-xl font-bold">{slide.story}</p>
-                  <Image src={`/images/story/slide${slideNumber}/text-bg.png`} fill alt="Gary" className="-z-10" />
-                </div>
-              ) : null}
-              {slide.text !== "" ? (
-                <div className={slide.textPosition}>
-                  <p className="z-10 px-12 py-24 text-center text-2xl font-bold">{slide.text}</p>
-                  <Image src={`/images/story/slide${slideNumber}/bubble.png`} fill alt="Gary" className="-z-10" />
-                </div>
-              ) : null}
-            </CarouselItem>
-          )
-        })}
-        {/* <CarouselNext /> */}
-      </CarouselContent>
-    </Carousel>
+    <CarouselItem ref={slideRef} className="relative h-full w-full pl-0">
+      <Image
+        src={`/images/story/slide${slideNumber}/bg.jpg`}
+        alt={`Slide ${slideNumber}`}
+        className="-z-20 select-none object-cover"
+        fill
+      />
+      {slideNumber === 0 ? (
+        <div className="flex h-full w-full flex-col items-center">
+          <Heading className="mt-20 text-6xl font-bold">Gary's story</Heading>
+          <Button
+            onClick={handleNext}
+            size="lg"
+            className="mt-[30vh] border-none bg-primary/70 px-10 py-10 text-3xl hover:!bg-primary/80"
+          >
+            Click for continue
+          </Button>
+        </div>
+      ) : null}
+      <div className={cn(slide.garyPosition, "-z-10 select-none", isActive ? "animate-fade-in-1" : "opacity-0")}>
+        <Image src={`/images/story/slide${slideNumber}/gary.png`} fill alt="Gary" className="-z-10" />
+      </div>
+      {slide.story !== "" ? (
+        <div
+          className={cn(
+            slide.storyPosition,
+            "-z-10 select-none",
+            isActive ? (slide.storySide !== "left" ? "animate-slide-in" : "animate-slide-in-left") : "opacity-0"
+          )}
+        >
+          <p className="z-10 pb-20 pl-24 pr-16 pt-28 text-xl font-bold">{slide.story}</p>
+          <Image src={`/images/story/slide${slideNumber}/text-bg.png`} fill alt="Story background" className="-z-10" />
+        </div>
+      ) : null}
+      {slide.text !== "" ? (
+        <div className={cn(slide.textPosition, "-z-10 select-none", isActive ? "animate-fade-in-2" : "opacity-0")}>
+          <p className="z-10 px-12 py-24 text-center text-2xl font-bold">{slide.text}</p>
+          <Image src={`/images/story/slide${slideNumber}/bubble.png`} fill alt="Text bubble" className="-z-10" />
+        </div>
+      ) : null}
+    </CarouselItem>
+  )
+}
+
+export function GarysStoryCarousel() {
+  const [current, setCurrent] = useState(0)
+  const carouselRef = useRef<HTMLDivElement>(null)
+  const [api, setApi] = useState<CarouselApi>()
+
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    setCurrent(api.selectedScrollSnap())
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap())
+    })
+  }, [api])
+
+  const handleDotClick = useCallback(
+    (index: number) => {
+      api?.scrollTo(index)
+    },
+    [api]
+  )
+
+  return (
+    <>
+      <Carousel
+        setApi={setApi}
+        opts={{
+          loop: false,
+        }}
+      >
+        <CarouselContent className="ml-0 h-screen w-screen" ref={carouselRef}>
+          {slides.map((slide, index) => {
+            const slideNumber = index
+            return (
+              <Slide key={slideNumber} data-index={index} slideNumber={slideNumber} slide={slide} carouselApi={api} />
+            )
+          })}
+        </CarouselContent>
+        <div className="absolute bottom-0 left-0 z-30 w-full">
+          <div className="flex flex-row justify-center gap-4 py-6">
+            {slides.map((_, index) => {
+              return (
+                <Button
+                  onClick={() => handleDotClick(index)}
+                  variant="ghost"
+                  className={cn(
+                    "size-6 bg-white/80 p-0 transition-all hover:bg-gary-light-blue",
+                    current === index ? "bg-gary-light-blue" : ""
+                  )}
+                ></Button>
+              )
+            })}
+          </div>
+        </div>
+      </Carousel>
+    </>
   )
 }

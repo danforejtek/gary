@@ -25,10 +25,10 @@ export default function Home() {
           className="absolute right-[8%] top-[50%] -z-10 -translate-y-[30%]"
         />
       </section>
-      <div className="relative -mb-12 -mt-16 h-48 w-full">
+      <div className="relative z-10 -mb-12 -mt-16 h-48 w-full">
         <Image src="/backgrounds/gradient.png" alt="Cover Image" fill />
       </div>
-      <section id="#about" className="relative h-screen w-screen">
+      <section id="#about" className="relative -mt-20 h-screen w-screen">
         <GarysStoryCarousel />
         {/* <Image src={`/backgrounds/1.jpg`} alt="Cover Image" className="-z-10 object-cover" fill />
         <Heading className="text-6xl font-bold">Gary&apos;s story</Heading> */}

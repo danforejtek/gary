@@ -9,6 +9,7 @@ export default getRequestConfig(async ({ locale }) => {
   if (!locales.includes(locale as any)) notFound()
   return {
     messages: (await import(`./public/locales/${locale}/common.json`)).default,
+    now: new Date(),
     timeZone: "Europe/Prague",
   }
 })
@@ -16,7 +17,6 @@ export default getRequestConfig(async ({ locale }) => {
 export const routing = defineRouting({
   // A list of all locales that are supported
   locales: ["en", "de"],
-
   // Used when no locale matches
   defaultLocale: "en",
 })

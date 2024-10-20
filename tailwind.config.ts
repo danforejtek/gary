@@ -67,6 +67,42 @@ const config: Config = {
         sans: ["var(--baloo-bhai)", ...fontFamily.sans],
         heading: ["var(--baloo-bhai)", ...fontFamily.sans],
       },
+      keyframes: {
+        "fade-in": {
+          from: {
+            opacity: "0",
+          },
+          to: {
+            opacity: "1",
+          },
+        },
+        "slide-in": {
+          from: {
+            transform: "translateX(100%)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+        },
+        "slide-in-left": {
+          from: {
+            transform: "translateX(-100%)",
+            opacity: "0",
+          },
+          to: {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+        },
+      },
+      animation: {
+        "fade-in-2": "fade-in 2s ease-in-out",
+        "fade-in-1": "fade-in 1s ease-in-out",
+        "slide-in": "slide-in 1s ease-in-out",
+        "slide-in-left": "slide-in-left 1s ease-in-out",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
