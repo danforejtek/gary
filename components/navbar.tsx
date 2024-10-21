@@ -4,11 +4,11 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 const links = [
-  { name: "Gary&apos;s story", href: "#about" },
+  { name: "Gary's story", href: "#about" },
   { name: "Help Gary", href: "#help-gary" },
-  { name: "Earn with Gary", href: "" },
-  { name: "Join us!", href: "" },
-  { name: "FAQ", href: "" },
+  { name: "Earn with Gary", href: "#earn" },
+  { name: "Join us!", href: "#save" },
+  { name: "FAQ", href: "#faq" },
 ]
 
 const NavBar = () => {
