@@ -100,7 +100,7 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
         fill
       />
       {slideNumber === 0 ? (
-        <div className="flex h-full w-full flex-col items-center">
+        <div className="flex h-full w-full flex-col items-center overflow-hidden">
           <Heading className="mt-20 text-6xl font-bold">Gary&apos;s story</Heading>
           <Button
             onClick={handleNext}

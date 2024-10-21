@@ -20,7 +20,11 @@ const SavePenguins = () => {
             <p className="text-3xl font-bold text-gary-light-blue">
               10% of all money from pre-sale will be donated to African Penguin Nest Project
             </p>
-            <p className="mt-4 text-3xl font-bold text-white">www.savingpenguins.org/</p>
+            <p className="mt-4 text-3xl font-bold text-white transition-colors hover:text-gary-yellow">
+              <a href="www.savingpenguins.org" target="_blank" rel="noopener noreferrer">
+                www.savingpenguins.org
+              </a>
+            </p>
           </div>
         </div>
         <Image src={`/images/penguins.png`} width={712} height={712} alt="" />
@@ -38,7 +42,7 @@ const SavePenguins = () => {
           <Image src={`/images/save-penguins/ice.svg`} width={740} height={187} alt="" className="absolute bottom-0" />
         </div>
 
-        <div className="flex w-1/2 flex-col pl-20">
+        <div className="flex w-1/2 flex-col px-8 md:px-20">
           <Heading className="text-4xl font-bold">Join Gary&apos;s army</Heading>
           <p className="text-2xl text-white">
             Show your support for Gary and his penguin family, and follow Gary on social media!
