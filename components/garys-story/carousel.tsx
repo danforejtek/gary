@@ -181,6 +181,7 @@ export function GarysStoryCarousel() {
             {slides.map((_, index) => {
               return (
                 <Button
+                  key={index}
                   onClick={() => handleDotClick(index)}
                   variant="ghost"
                   className={cn(
