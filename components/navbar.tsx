@@ -13,7 +13,7 @@ const links = [
 
 const NavBar = () => {
   return (
-    <div className="container mx-auto grid w-full grid-cols-[200px_1fr_200px] items-center justify-between gap-8 py-4">
+    <div className="container mx-auto hidden w-full grid-cols-[200px_1fr_200px] items-center justify-between gap-8 py-4 lg:grid">
       <div className="h-14 w-14 rounded-full">
         <Image src="/logo.png" alt="Gary" width={60} height={60} />
       </div>

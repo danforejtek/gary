@@ -1,7 +1,22 @@
+"use client"
+
 import React from "react"
-import { Heading } from "@/components/heading"
+import { Star } from "lucide-react"
+import { motion } from "framer-motion"
 import Image from "next/image"
-import { formatAmount } from "@/lib/utils"
+import { cn, formatAmount } from "@/lib/utils"
+
+interface Step {
+  votes: number
+  title: string
+  description: string
+  img: string
+}
+
+interface VerticalProgressIndicatorProps {
+  steps?: Step[]
+  activeStep?: number
+}
 
 const garysRoadMapData = [
   {
@@ -53,29 +68,97 @@ const garysRoadMapData = [
   },
 ]
 
-const GarysRoadmap = () => (
-  <div className="flex w-full flex-col text-white">
-    <div className="mb-4 flex flex-col">
-      {garysRoadMapData.map((item, index) => {
-        const { votes, title, description, img } = item
-        return (
-          <div key={index} className="flex flex-row gap-8">
-            <div className="flex w-20 items-center justify-center">IMG kolečko</div>
-            <div className="mb-5 flex w-full items-center justify-between rounded-3xl bg-[#0D1E35]">
-              <div className="flex w-[620px] flex-col px-8 py-6">
-                <p className="text-xl font-bold text-gary-light-blue">{formatAmount(votes, 0)}</p>
-                <p className="text-3xl font-bold text-gary-yellow">{title}</p>
-                <span className="text-xl font-bold">{description}</span>
-              </div>
-              <div className="relative mr-5 flex h-32 w-32 items-center justify-center">
-                <Image src={`/images/help-gary/${img}`} alt="Gary" fill className="object-contain" />
+export function GarysRoadmap({ steps = garysRoadMapData, activeStep = 2 }: VerticalProgressIndicatorProps) {
+  // const progressHeight = `${(activeStep / (steps.length - 1)) * 100}%`
+
+  return (
+    <div className="container relative mx-auto flex h-full w-full flex-col text-white">
+      <div className="relative flex flex-col gap-8">
+        {steps.map((step, index) => (
+          <motion.div
+            key={index}
+            className="flex flex-1 gap-6 last:mb-0"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex h-full">
+              <div className="relative flex flex-1 flex-row items-center justify-center">
+                {index <= activeStep ? (
+                  <motion.div
+                    className={cn(
+                      "absolute -top-8 left-5 w-2 bg-gary-light-blue",
+                      index === 0 ? "-top-2 rounded-t-full" : "",
+                      index === steps.length - 1 ? "rounded-b-full" : "",
+                      activeStep === index ? "rounded-b-full" : ""
+                    )}
+                    initial={{ height: 0 }}
+                    animate={{ height: "120%" }}
+                    transition={{
+                      duration: 1.5,
+                      ease: "linear",
+                      stiffness: 0,
+                      damping: 0,
+                      delay: index * 1.5,
+                    }}
+                  />
+                ) : null}
+                <div
+                  className={cn(
+                    "absolute left-5 -z-20 h-[120%] w-2 bg-[#0D1E35]",
+                    index === 0 ? "rounded-t-full" : "",
+                    index === steps.length - 1 ? "rounded-b-full" : ""
+                  )}
+                ></div>
+                {/* <div className="absolute left-4 -z-10 h-full w-3.5 bg-gray-800"></div> */}
+                <motion.div
+                  className={`z-100 relative flex size-12 items-center justify-center rounded-full bg-[#0D1E35] ring-8 ${
+                    index <= activeStep ? "ring-gary-light-blue" : "bg-[#0D1E35] ring-transparent"
+                  }`}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 20, delay: index * 0.2 + 0.3 }}
+                >
+                  {index <= activeStep ? (
+                    <Star className="h-5 w-5 text-yellow-400" />
+                  ) : (
+                    <div className="h-3 w-3 rounded-full bg-slate-500" />
+                  )}
+                </motion.div>
               </div>
             </div>
-          </div>
-        )
-      })}
+            <div className="flex w-full items-center justify-between rounded-3xl bg-[#0D1E35]">
+              <motion.div
+                className="flex w-full max-w-[620px] flex-col px-8 py-6 lg:w-full"
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.2 + 0.2 }}
+              >
+                <div className="text-xl font-bold text-gary-light-blue" suppressHydrationWarning>
+                  {formatAmount(step.votes, 0)}
+                </div>
+                <h3 className="text-3xl font-bold text-gary-yellow">{step.title}</h3>
+                <p className="text-xl font-bold">{step.description}</p>
+              </motion.div>
+              <motion.div
+                className="relative mr-5 flex h-32 w-32 items-center justify-center"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
+              >
+                <Image
+                  src={`/images/help-gary/${step.img}`}
+                  alt=""
+                  fill
+                  className="object-contain"
+                  sizes="365px"
+                  quality={100}
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
-  </div>
-)
-
-export default GarysRoadmap
+  )
+}

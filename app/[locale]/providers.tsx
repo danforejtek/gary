@@ -1,16 +1,17 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { ThemeProvider } from "@/components/theme-provider";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { type AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
+import { useState } from "react"
+import { ThemeProvider } from "@/components/theme-provider"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { type AbstractIntlMessages, NextIntlClientProvider } from "next-intl"
 // import { MetaMaskProvider } from "@metamask/sdk-react"
+import { WalletProviders } from "@/components/buy-gara-widget/wallet-providers"
 
 type ProvidersProps = {
-  children: React.ReactNode;
-  locale: string;
-  messages: AbstractIntlMessages;
-};
+  children: React.ReactNode
+  locale: string
+  messages: AbstractIntlMessages
+}
 
 export function Providers({ children, locale, messages }: ProvidersProps) {
   const [queryClient] = useState(
@@ -22,20 +23,15 @@ export function Providers({ children, locale, messages }: ProvidersProps) {
           },
         },
       })
-  );
+  )
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <WalletProviders locale={locale}>{children}</WalletProviders>
         </NextIntlClientProvider>
       </ThemeProvider>
     </QueryClientProvider>
-  );
+  )
 }

@@ -260,7 +260,7 @@ export function BuyGara({ className }: { className?: string }) {
   return (
     <section
       className={cn(
-        "w-full max-w-full flex-1 overflow-x-hidden rounded-2xl bg-background p-6 shadow-md lg:max-w-[480px]",
+        "w-full max-w-[480px] max-w-full flex-1 overflow-x-hidden rounded-2xl bg-background p-6 shadow-md",
         className
       )}
     >
