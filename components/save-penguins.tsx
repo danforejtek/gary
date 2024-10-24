@@ -12,7 +12,7 @@ const SavePenguins = () => {
           <Heading className="text-center text-6xl font-bold leading-none tracking-normal lg:text-left">
             Save penguins
           </Heading>
-          <p className="mt-4 px-6 text-center text-2xl font-bold text-white lg:text-left">
+          <p className="mt-4 px-6 text-center text-2xl font-bold text-white md:px-0 lg:text-left">
             African penguins are in serious trouble. Their numbers have plummeted  over the past century due to the 
             destruction of nesting sites,  egg poaching, oil spills, global  climate change, and competition for food
             resources with commercial fishing. There is hope to save this iconic species, through the African
