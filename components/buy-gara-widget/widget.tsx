@@ -263,7 +263,7 @@ export function BuyGara({ className }: { className?: string }) {
       <Table className="text-base">
         <TableBody className="text-base">
           <TableRow className="!border-none">
-            <TableCell className="!p-1 font-heading font-bold">{t("totalTokens")}</TableCell>
+            <TableCell className="max-w-[80px] !p-1 font-heading font-bold">{t("totalTokens")}</TableCell>
             <TableCell className="!p-1 text-end font-bold text-gary-pink">900M GARA</TableCell>
           </TableRow>
           <TableRow className="!border-none">

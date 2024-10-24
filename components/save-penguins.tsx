@@ -18,7 +18,7 @@ const SavePenguins = () => {
             resources with commercial fishing. There is hope to save this iconic species, through the African
             Penguin Nest Project.
           </p>
-          <div className="mt-10 rounded-3xl bg-[#0D1E35] px-16 py-8 text-center">
+          <div className="mt-10 rounded-3xl bg-[#0D1E35] px-6 py-8 text-center lg:px-16">
             <p className="text-3xl font-bold text-gary-light-blue">
               10% of all money from pre-sale will be donated to African Penguin Nest Project
             </p>

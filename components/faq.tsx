@@ -21,7 +21,10 @@ const Faq = () => (
     <Heading className="text-left text-6xl font-bold leading-none tracking-normal">FAQ</Heading>
     <div className="mb-20 mt-16 flex flex-col gap-10">
       {faqData.map((faq, index) => (
-        <div key={index} className="mx-auto flex w-full flex-col gap-4 rounded-3xl bg-[#0D1E35] px-16 py-12 lg:w-3/5">
+        <div
+          key={index}
+          className="mx-auto flex w-full flex-col gap-4 rounded-3xl bg-[#0D1E35] px-6 py-8 lg:w-3/5 lg:px-16 lg:py-12"
+        >
           <Heading className="text-center text-4xl font-bold lg:text-left">{faq.title}</Heading>
           <p className="text-center text-2xl font-bold text-white lg:text-left">{faq.text}</p>
         </div>
