@@ -7,7 +7,7 @@ const EarnWithGary = () => {
   return (
     <div className="container mx-auto flex flex-col items-center justify-normal px-6">
       <div className="flex flex-col items-center gap-6">
-        <Heading className="text-6xl font-bold">Earn with Gary</Heading>
+        <Heading className="text-center text-6xl font-bold">Earn with Gary</Heading>
         <p className="my-5 text-center text-4xl font-bold text-gary-blue">
           Stake your GARA coins and earn up to{" "}
           <span
@@ -35,7 +35,7 @@ const EarnWithGary = () => {
         </Button>
       </div>
 
-      <div className="relative mt-56 flex lg:mt-32">
+      <div className="relative mt-56 hidden lg:mt-32 lg:flex">
         <Image
           src={`/images/earn-with-gary/money.png`}
           alt="Gary"

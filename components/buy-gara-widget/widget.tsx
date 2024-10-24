@@ -258,12 +258,7 @@ export function BuyGara({ className }: { className?: string }) {
   }
 
   return (
-    <section
-      className={cn(
-        "w-full max-w-[480px] max-w-full flex-1 overflow-x-hidden rounded-2xl bg-background p-6 shadow-md",
-        className
-      )}
-    >
+    <section className={cn("w-full max-w-full flex-1 rounded-2xl bg-background p-6 shadow-md", className)}>
       <h3 className="mb-6 text-center font-heading text-4xl font-bold text-gary-blue">{t("header")}</h3>
       <Table className="text-base">
         <TableBody className="text-base">

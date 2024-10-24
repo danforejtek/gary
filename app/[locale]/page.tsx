@@ -11,17 +11,10 @@ import Faq from "@/components/faq"
 export default function Home() {
   return (
     <main>
-      <section id="home" className="relative flex h-screen flex-1 flex-col items-center justify-start">
+      <section id="home" className="relative flex min-h-screen w-full flex-col items-center justify-start">
         <NavBar />
-        <Image
-          src={`/backgrounds/0.jpg`}
-          alt="Cover Image"
-          className="-z-10 object-cover"
-          priority
-          quality={100}
-          fill
-        />
-        <div className="flex h-full flex-1 flex-col px-6">
+        <Image src={`/backgrounds/0.jpg`} alt="" className="-z-10 object-cover" priority quality={100} fill />
+        <div className="flex h-full w-full flex-1 flex-col px-4 sm:px-6">
           <SaveGary />
         </div>
         <Image
@@ -29,35 +22,33 @@ export default function Home() {
           alt="Gary"
           width={357}
           height={396}
-          className="absolute right-[8%] top-[50%] -z-10 -translate-y-[30%]"
+          className="absolute right-[8%] top-[50%] -z-10 w-[200px] -translate-y-[30%] sm:w-[257px] md:w-[357px]"
         />
       </section>
-      <div className="relative z-10 -mb-12 -mt-16 h-48 w-full px-6">
-        <Image src="/backgrounds/gradient.png" alt="Cover Image" fill />
+      <div className="relative z-10 -mb-12 -mt-16 h-32 w-full px-4 sm:h-48 sm:px-6">
+        <Image src="/backgrounds/gradient.png" alt="" fill className="object-cover" />
       </div>
-      <section id="about" className="relative -mt-20 hidden h-screen w-screen lg:block">
+      {/* Pro mobilní zařízení skryjeme sekci about a zobrazíme ji pouze na větších obrazovkách */}
+      <section id="about" className="relative -mt-20 hidden h-screen w-full lg:block">
         <GarysStoryCarousel />
-        {/* <Image src={`/backgrounds/1.jpg`} alt="Cover Image" className="-z-10 object-cover" fill />
-        <Heading className="text-6xl font-bold">Gary&apos;s story</Heading> */}
       </section>
-      <section id="help-gary" className="bg-gary-blue px-6 pb-24">
+      <section id="help-gary" className="bg-gary-blue px-4 py-12 sm:px-6 sm:pb-24">
         <HelpGary />
       </section>
-      <div className="relative -mb-16 -mt-16 h-48 w-full">
-        <Image src="/backgrounds/gradient2.png" alt="Cover Image" fill />
+      <div className="relative -mb-12 -mt-12 h-32 w-full sm:-mb-16 sm:-mt-16 sm:h-48">
+        <Image src="/backgrounds/gradient2.png" alt="" fill className="object-cover" />
       </div>
-      <section id="earn" className="relative flex flex-col justify-center object-cover px-6 py-24">
-        {/* BG todo - nemáme obrázek pro tento slide, dočasně použit stejný jako na uvodním */}
-        <Image src={`/backgrounds/0.jpg`} alt="Cover Image" className="-z-10 object-cover" fill />
+      <section id="earn" className="relative flex flex-col justify-center px-4 py-12 sm:px-6 sm:py-24">
+        <Image src={`/backgrounds/0.jpg`} alt="" className="-z-10 object-cover" fill />
         <EarnWithGary />
       </section>
-      <div className="relative -mb-16 -mt-10 h-60 w-full">
-        <Image src={`/backgrounds/ice.svg`} alt="Cover Image" className="object-cover" fill />
+      <div className="relative -mb-12 -mt-8 h-40 w-full sm:-mb-16 sm:-mt-10 sm:h-60">
+        <Image src={`/backgrounds/ice.svg`} alt="" className="object-cover" fill />
       </div>
-      <section id="save" className="-mt-44 flex bg-gary-blue px-6">
+      <section id="save" className="-mt-32 flex bg-gary-blue px-4 sm:-mt-44 sm:px-6">
         <SavePenguins />
       </section>
-      <section id="faq" className="bg-gary-blue px-6">
+      <section id="faq" className="bg-gary-blue px-4 sm:px-6">
         <Faq />
       </section>
     </main>

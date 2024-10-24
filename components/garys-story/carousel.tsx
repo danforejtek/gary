@@ -38,8 +38,7 @@ const slides = [
     garyPosition: "absolute bottom-0 left-[40%] w-[266px] h-[344px]",
   },
   {
-    story:
-      "Gary is sad to have lost his job and wonders what he&apos;s going to do now that he&apos;s suddenly got an idea!",
+    story: "Gary is sad to have lost his job and wonders what he's going to do now that he's suddenly got an idea!",
     text: "",
     storySide: "left",
     storyPosition: "absolute bottom-0 left-0 w-[500px] h-[420px]",

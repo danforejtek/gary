@@ -40,7 +40,7 @@ const garysRoadMapData = [
   },
   {
     votes: 5000000,
-    title: "GARY&apos;S PROMOTION",
+    title: "GARY'S PROMOTION",
     description:
       "Gary will gain more influence in the company and push listing of GARA coin on selected exchanges in the top 50.",
     img: "promotion.png",
@@ -72,7 +72,7 @@ export function GarysRoadmap({ steps = garysRoadMapData, activeStep = 2 }: Verti
   // const progressHeight = `${(activeStep / (steps.length - 1)) * 100}%`
 
   return (
-    <div className="container relative mx-auto flex h-full w-full flex-col text-white">
+    <div className="relative flex h-full w-full flex-col justify-between py-4 text-white">
       <div className="relative flex flex-col gap-8">
         {steps.map((step, index) => (
           <motion.div
@@ -82,12 +82,12 @@ export function GarysRoadmap({ steps = garysRoadMapData, activeStep = 2 }: Verti
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex h-full">
+            <div className="hidden h-full w-16 lg:flex">
               <div className="relative flex flex-1 flex-row items-center justify-center">
                 {index <= activeStep ? (
                   <motion.div
                     className={cn(
-                      "absolute -top-8 left-5 w-2 bg-gary-light-blue",
+                      "absolute -top-8 left-7 w-2 bg-gary-light-blue",
                       index === 0 ? "-top-2 rounded-t-full" : "",
                       index === steps.length - 1 ? "rounded-b-full" : "",
                       activeStep === index ? "rounded-b-full" : ""
@@ -105,7 +105,7 @@ export function GarysRoadmap({ steps = garysRoadMapData, activeStep = 2 }: Verti
                 ) : null}
                 <div
                   className={cn(
-                    "absolute left-5 -z-20 h-[120%] w-2 bg-[#0D1E35]",
+                    "absolute left-7 -z-20 h-[120%] w-2 bg-[#0D1E35]",
                     index === 0 ? "rounded-t-full" : "",
                     index === steps.length - 1 ? "rounded-b-full" : ""
                   )}
@@ -127,7 +127,7 @@ export function GarysRoadmap({ steps = garysRoadMapData, activeStep = 2 }: Verti
                 </motion.div>
               </div>
             </div>
-            <div className="flex w-full items-center justify-between rounded-3xl bg-[#0D1E35]">
+            <div className="flex w-full max-w-[700px] flex-col items-center justify-between rounded-3xl bg-[#0D1E35] lg:flex-row">
               <motion.div
                 className="flex w-full max-w-[620px] flex-col px-8 py-6 lg:w-full"
                 initial={{ x: -50, opacity: 0 }}

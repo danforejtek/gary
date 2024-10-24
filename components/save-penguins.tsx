@@ -7,12 +7,12 @@ import { Button } from "./ui/button"
 const SavePenguins = () => {
   return (
     <div className="container relative mx-auto mb-40 flex min-h-screen flex-col items-center">
-      <div className="container mx-auto mt-40 flex flex-row flex-wrap lg:mt-60 lg:gap-16">
+      <div className="mt-40 flex flex-row flex-wrap lg:mt-60 lg:gap-16">
         <div className="flex flex-col justify-center lg:w-[44%] lg:max-w-[700px]">
           <Heading className="text-center text-6xl font-bold leading-none tracking-normal lg:text-left">
             Save penguins
           </Heading>
-          <p className="mt-4 text-center text-2xl font-bold text-white lg:text-left">
+          <p className="mt-4 px-6 text-center text-2xl font-bold text-white lg:text-left">
             African penguins are in serious trouble. Their numbers have plummeted  over the past century due to the 
             destruction of nesting sites,  egg poaching, oil spills, global  climate change, and competition for food
             resources with commercial fishing. There is hope to save this iconic species, through the African
@@ -22,7 +22,7 @@ const SavePenguins = () => {
             <p className="text-3xl font-bold text-gary-light-blue">
               10% of all money from pre-sale will be donated to African Penguin Nest Project
             </p>
-            <p className="mt-4 text-3xl font-bold text-white transition-colors hover:text-gary-yellow">
+            <p className="mt-4 text-xl font-bold text-white transition-colors hover:text-gary-yellow sm:text-2xl lg:text-3xl">
               <a href="www.savingpenguins.org" target="_blank" rel="noopener noreferrer">
                 www.savingpenguins.org
               </a>
@@ -51,14 +51,14 @@ const SavePenguins = () => {
           <p className="text-2xl text-white">
             Show your support for Gary and his penguin family, and follow Gary on social media!
           </p>
-          <div className="flex flex-row">
-            <Button className="mr-4 mt-8 size-28 rounded-3xl bg-[#0D1E35] lg:size-[156px]">
+          <div className="mt-8 flex flex-row gap-2">
+            <Button className="size-28 rounded-3xl bg-[#0D1E35] lg:size-[156px]">
               <Image src={`/images/save-penguins/facebook.svg`} width={104} height={104} alt="" />
             </Button>
-            <Button className="mr-4 mt-8 size-28 rounded-3xl bg-[#0D1E35] lg:size-[156px]">
+            <Button className="size-28 rounded-3xl bg-[#0D1E35] lg:size-[156px]">
               <Image src={`/images/save-penguins/twitter.svg`} width={80} height={80} alt="" />
             </Button>
-            <Button className="mr-4 mt-8 size-28 rounded-3xl bg-[#0D1E35] lg:size-[156px]">
+            <Button className="size-28 rounded-3xl bg-[#0D1E35] lg:size-[156px]">
               <Image src={`/images/save-penguins/telegram.svg`} width={87} height={87} alt="" />
             </Button>
           </div>
