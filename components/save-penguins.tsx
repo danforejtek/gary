@@ -1,10 +1,8 @@
 import Image from "next/image"
-import React from "react"
 import { Heading } from "./heading"
-import { cn } from "../lib/utils"
 import { Button } from "./ui/button"
 
-const SavePenguins = () => {
+export const SavePenguins = () => {
   return (
     <div className="container relative mx-auto mb-40 flex min-h-screen flex-col items-center">
       <div className="mt-40 flex flex-row flex-wrap lg:mt-60 lg:gap-16">
@@ -77,5 +75,3 @@ const SavePenguins = () => {
     </div>
   )
 }
-
-export default SavePenguins

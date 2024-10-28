@@ -3,7 +3,7 @@ import { Heading } from "@/components/heading"
 import { Button } from "./ui/button"
 import Image from "next/image"
 
-const EarnWithGary = () => {
+export const EarnWithGary = () => {
   return (
     <div className="container mx-auto flex flex-col items-center justify-normal px-6">
       <div className="flex flex-col items-center gap-6">
@@ -61,5 +61,3 @@ const EarnWithGary = () => {
     </div>
   )
 }
-
-export default EarnWithGary

@@ -1,17 +1,17 @@
-import Link from "next/link"
-import React from "react"
+"use client"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { AnchorLink } from "./anchor-link"
 
 const links = [
-  { name: "Gary's story", href: "#about" },
-  { name: "Help Gary", href: "#help-gary" },
-  { name: "Earn with Gary", href: "#earn" },
-  { name: "Join us!", href: "#save" },
-  { name: "FAQ", href: "#faq" },
+  { name: "Gary's story", anchor: "about" },
+  { name: "Help Gary", anchor: "help-gary" },
+  { name: "Earn with Gary", anchor: "earn" },
+  { name: "Join us!", anchor: "save" },
+  { name: "FAQ", anchor: "faq" },
 ]
 
-const NavBar = () => {
+export const NavBar = () => {
   return (
     <div className="container mx-auto hidden w-full grid-cols-[200px_1fr_200px] items-center justify-between gap-8 py-4 lg:grid">
       <div className="h-14 w-14 rounded-full">
@@ -21,9 +21,11 @@ const NavBar = () => {
         <ul className="flex flex-row gap-2">
           {links.map((link) => (
             <li key={link.name}>
-              <Button variant="ghost" asChild className="text-xl font-bold text-white">
-                <Link href={link.href}>{link.name}</Link>
-              </Button>
+              <AnchorLink anchor={link.anchor}>
+                <Button variant="ghost" className="text-xl font-bold text-white">
+                  {link.name}
+                </Button>
+              </AnchorLink>
             </li>
           ))}
         </ul>
@@ -34,5 +36,3 @@ const NavBar = () => {
     </div>
   )
 }
-
-export default NavBar

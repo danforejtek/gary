@@ -13,6 +13,7 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Heading } from "@/components/heading"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const slides = [
   {
@@ -175,6 +176,25 @@ export function GarysStoryCarousel() {
             )
           })}
         </CarouselContent>
+        {/* next slide button */}
+        {current !== 0 ? (
+          <Button
+            onClick={() => api?.scrollPrev()}
+            variant="ghost"
+            className="absolute left-0 top-1/2 z-20 size-24 h-screen -translate-y-1/2 transform rounded-none bg-transparent p-0 transition-all hover:bg-black/20"
+          >
+            <ChevronLeft className="size-24 stroke-white" />
+          </Button>
+        ) : null}
+        {current !== slides?.length - 1 ? (
+          <Button
+            onClick={() => api?.scrollNext()}
+            variant="ghost"
+            className="absolute right-0 top-1/2 z-20 size-24 h-screen -translate-y-1/2 transform rounded-none bg-black/10 p-0 transition-all hover:bg-black/20"
+          >
+            <ChevronRight className="size-24 stroke-white" />
+          </Button>
+        ) : null}
         <div className="absolute bottom-0 left-0 z-30 w-full">
           <div className="flex flex-row justify-center gap-4 py-6">
             {slides.map((_, index) => {

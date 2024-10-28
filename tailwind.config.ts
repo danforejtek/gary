@@ -96,12 +96,18 @@ const config: Config = {
             opacity: "1",
           },
         },
+        "slow-bounce": {
+          "0%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+          "100%": { transform: "translateY(0)" },
+        },
       },
       animation: {
         "fade-in-2": "fade-in 2s ease-in-out",
         "fade-in-1": "fade-in 1s ease-in-out",
         "slide-in": "slide-in 1s ease-in-out",
         "slide-in-left": "slide-in-left 1s ease-in-out",
+        "slow-bounce": "slow-bounce 2s infinite",
       },
     },
   },

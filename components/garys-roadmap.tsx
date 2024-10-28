@@ -50,7 +50,7 @@ const garysRoadMapData = [
     title: "Seat on the board of directors",
     description:
       "GARY will use his influence in the company and list GARA coin on some of the top 10 crypto exchanges.",
-    img: "",
+    img: "board-member.png",
   },
   {
     votes: 20000000,

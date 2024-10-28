@@ -1,4 +1,3 @@
-import React from "react"
 import { Heading } from "@/components/heading"
 
 const faqData = [
@@ -16,7 +15,7 @@ const faqData = [
   },
 ]
 
-const Faq = () => (
+export const Faq = () => (
   <div className="container mx-auto flex flex-col items-center justify-center">
     <Heading className="text-left text-6xl font-bold leading-none tracking-normal">FAQ</Heading>
     <div className="mb-20 mt-16 flex flex-col gap-10">
@@ -32,5 +31,3 @@ const Faq = () => (
     </div>
   </div>
 )
-
-export default Faq
