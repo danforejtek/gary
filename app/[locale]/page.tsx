@@ -35,7 +35,7 @@ export default function Home() {
       <section id="about" className="relative -mt-20 hidden h-screen w-full snap-start lg:block">
         <GarysStoryCarousel />
       </section>
-      <section id="help-gary" className="snap-start bg-gary-blue px-4 py-12 sm:px-6 sm:pb-24">
+      <section id="help-gary" className="snap-start bg-background px-4 py-12 sm:px-6 sm:pb-24">
         <HelpGary />
       </section>
       <div className="relative -mb-12 -mt-12 h-32 w-full snap-start sm:-mb-16 sm:-mt-16 sm:h-48">
@@ -48,10 +48,10 @@ export default function Home() {
       <div className="relative -mb-12 -mt-8 h-40 w-full sm:-mb-16 sm:-mt-10 sm:h-60">
         <Image src={`/backgrounds/ice.svg`} alt="" className="object-cover" fill />
       </div>
-      <section id="save" className="-mt-32 flex snap-start bg-gary-blue px-4 sm:-mt-44 sm:px-6">
+      <section id="save" className="-mt-32 flex snap-start bg-background px-4 sm:-mt-44 sm:px-6">
         <SavePenguins />
       </section>
-      <section id="faq" className="snap-start bg-gary-blue px-4 sm:px-6">
+      <section id="faq" className="snap-start bg-background px-4 sm:px-6">
         <Faq />
       </section>
     </main>

@@ -27,7 +27,7 @@ export function Providers({ children, locale, messages }: ProvidersProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <WalletProviders locale={locale}>{children}</WalletProviders>
         </NextIntlClientProvider>

@@ -27,6 +27,7 @@ import { getTokenBalance } from "@/lib/get-balance"
 import Arrow from "@/public/images/gara-coin/arrow.svg"
 import Polygon from "@/public/images/gara-coin/polygon.svg"
 import CountdownTimer from "@/components/countdown-timer"
+import { Rounds } from "@/components/rounds"
 
 // const COINGARAGE_CONTRACT_ADDRESS = "0xA4AC096554f900d2F5AafcB9671FA84c55cA3bE1" as `0x${string}`
 const COINGARAGE_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_COINGARAGE_ADDRESS as `0x${string}`
@@ -294,26 +295,7 @@ export function BuyGara({ className }: { className?: string }) {
       <div className="my-4 flex flex-row justify-center">
         <CountdownTimer />
       </div>
-      <div className="my-4 flex flex-row justify-center gap-4">
-        <div className="flex flex-col items-center gap-2 rounded-xl bg-[#0D1E35] px-6 py-3">
-          <p className="text-xs font-bold leading-none text-white">
-            1<sup>st</sup> round
-          </p>
-          <p className="text-lg font-bold leading-none text-gary-yellow">$0.12</p>
-        </div>
-        <div className="flex flex-col items-center gap-2 rounded-xl bg-gary-input-blue px-6 py-3">
-          <p className="text-xs font-bold leading-none text-[#0D1E35]">
-            2<sup>nd</sup> round
-          </p>
-          <p className="text-lg font-bold leading-none text-gary-pink">$0.15</p>
-        </div>
-        <div className="flex flex-col items-center gap-2 rounded-xl bg-gary-input-blue px-6 py-3">
-          <p className="text-xs font-bold leading-none text-[#0D1E35]">
-            3<sup>rd</sup> round
-          </p>
-          <p className="text-lg font-bold leading-none text-gary-pink">$0.20</p>
-        </div>
-      </div>
+      <Rounds />
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-full">
         <div className="mt-4 grid w-full grid-cols-2 gap-2 md:grid-cols-[1fr_150px]">
           <CoinInput

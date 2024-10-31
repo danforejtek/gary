@@ -5,18 +5,20 @@ import { ArrowDown } from "lucide-react"
 import Image from "next/image"
 
 export const SaveGary = () => (
-  <div className="relative mb-8 mt-12 flex h-full flex-1 flex-col items-center justify-between">
+  <div className="relative mb-8 mt-12 flex h-full flex-1 flex-col items-center justify-center gap-8">
     <div>
       <Heading className="text-center text-[5rem] font-bold leading-none tracking-normal">Save penguin Gary</Heading>
       <p className="mt-4 text-center text-2xl font-bold text-gary-blue">
         The cutest and most determined penguin in the crypto world
       </p>
     </div>
-    <div className="pt-6">
+
+    <div className="mt-6">
       <p className="mb-4 text-center text-2xl font-bold text-gary-blue">Gary doesn&apos;t have much time left</p>
       <CountdownTimer />
     </div>
-    <div className="flex flex-col items-center">
+
+    <div className="mt-6 flex flex-col items-center">
       <p className="text-center text-2xl font-bold text-white">Find out how you can help Gary</p>
     </div>
   </div>

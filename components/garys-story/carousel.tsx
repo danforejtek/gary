@@ -105,7 +105,7 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
           <Button
             onClick={handleNext}
             size="lg"
-            className="mt-[30vh] border-none bg-primary/70 px-10 py-10 text-3xl hover:!bg-primary/80"
+            className="mt-[30vh] border-none bg-black/70 px-10 py-10 text-3xl hover:!bg-black/80"
           >
             Click for continue
           </Button>
@@ -128,7 +128,7 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
       ) : null}
       {slide.text !== "" ? (
         <div className={cn(slide.textPosition, "-z-10 select-none", isActive ? "animate-fade-in-2" : "opacity-0")}>
-          <p className="z-10 px-12 py-24 text-center text-2xl font-bold">{slide.text}</p>
+          <p className="z-10 py-16 pl-12 pr-20 text-center text-2xl font-bold">{slide.text}</p>
           <Image src={`/images/story/slide${slideNumber}/bubble.png`} fill alt="Text bubble" className="-z-10" />
         </div>
       ) : null}
