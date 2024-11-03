@@ -31,7 +31,11 @@ export const NavBar = () => {
         </ul>
       </nav>
       <div className="flex items-center justify-end">
-        <Button className="rounded-full bg-[#061022] px-4 py-2 text-xl font-bold text-[#FFAE17]">Buy GARA coin</Button>
+        <AnchorLink anchor="buy-gara">
+          <Button className="rounded-full border-transparent bg-[#061022] px-4 py-2 text-xl font-bold text-[#FFAE17] ring-2 ring-transparent ring-offset-0 transition-all hover:!bg-[#061022] hover:!text-gary-yellow hover:ring-gary-yellow hover:ring-offset-2">
+            Buy GARA coin
+          </Button>
+        </AnchorLink>
       </div>
     </div>
   )

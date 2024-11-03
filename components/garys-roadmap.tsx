@@ -53,7 +53,7 @@ const garysRoadMapData = [
     img: "board-member.png",
   },
   {
-    votes: 20000000,
+    votes: 30000000,
     title: "Taking over",
     description:
       "GARY will become king and gain control of the exchange Coingarage and rename it Coinguin. As the first act of his reign, he will burn 15% of the total supply of GARA coin.",
@@ -68,7 +68,7 @@ const garysRoadMapData = [
   },
 ]
 
-export function GarysRoadmap({ steps = garysRoadMapData, activeStep = 2 }: VerticalProgressIndicatorProps) {
+export function GarysRoadmap({ steps = garysRoadMapData, activeStep = 0 }: VerticalProgressIndicatorProps) {
   // const progressHeight = `${(activeStep / (steps.length - 1)) * 100}%`
 
   return (
@@ -127,7 +127,7 @@ export function GarysRoadmap({ steps = garysRoadMapData, activeStep = 2 }: Verti
                 </motion.div>
               </div>
             </div>
-            <div className="flex w-full max-w-[700px] flex-col items-center justify-between rounded-3xl bg-[#0D1E35] lg:flex-row">
+            <div className="flex w-full max-w-[700px] flex-col items-center justify-between rounded-3xl bg-[#0D1E35] pb-2 md:mb-0 lg:flex-row">
               <motion.div
                 className="flex w-full max-w-[620px] flex-col px-8 py-6 lg:w-full"
                 initial={{ x: -50, opacity: 0 }}

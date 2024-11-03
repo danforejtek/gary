@@ -7,7 +7,7 @@ import { useEffect, useState } from "react"
 const CountdownTimer = ({ className }: { className?: string }) => {
   const t = useTranslations("GARA.garaDepo.timer")
   // Set the target date/time
-  const targetDate = new Date("2024-10-27T23:59").getTime()
+  const targetDate = new Date("2024-12-15T23:59").getTime()
 
   // State to hold remaining time
   const [timeLeft, setTimeLeft] = useState({

@@ -15,7 +15,7 @@ import Image from "next/image"
 import { CoinInput } from "@/components/buy-gara-widget/coin-input"
 import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table"
-import { cn } from "@/lib/utils"
+import { cn, formatAmount } from "@/lib/utils"
 import { useForm, useWatch } from "react-hook-form"
 import { getGaraEstimate, usdcToGara } from "@/app/api/gara/lib/utils"
 import { useGaraStore } from "@/lib/store/provider"
@@ -31,6 +31,7 @@ import { Rounds } from "@/components/rounds"
 
 // const COINGARAGE_CONTRACT_ADDRESS = "0xA4AC096554f900d2F5AafcB9671FA84c55cA3bE1" as `0x${string}`
 const COINGARAGE_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_COINGARAGE_ADDRESS as `0x${string}`
+const TOKENS_SOLD = 647149
 
 const formSchema = z.object({
   to: z.string().refine((value) => isAddress(value), {
@@ -259,6 +260,7 @@ export function BuyGara({ className }: { className?: string }) {
 
   return (
     <section
+      id="buy-gara"
       className={cn(
         "relative w-full max-w-full flex-1 rounded-2xl bg-gradient-to-b from-white to-[#CFEFFF] p-6 shadow-md",
         className
@@ -277,7 +279,9 @@ export function BuyGara({ className }: { className?: string }) {
           </TableRow>
           <TableRow className="!border-none">
             <TableCell className="!p-1 font-bold">{t("soldTokens")}</TableCell>
-            <TableCell className="!p-1 text-end font-bold text-gary-pink">2M GARA</TableCell>
+            <TableCell className="!p-1 text-end font-bold text-gary-pink" suppressHydrationWarning>
+              {formatAmount(TOKENS_SOLD, 0)} GARA
+            </TableCell>
           </TableRow>
         </TableBody>
       </Table>

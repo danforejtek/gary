@@ -4,7 +4,7 @@ import { Button } from "./ui/button"
 
 export const SavePenguins = () => {
   return (
-    <div className="container relative mx-auto mb-60 flex min-h-screen flex-col items-center">
+    <div className="container relative mx-auto flex min-h-screen flex-col items-center">
       <div className="flex w-full flex-row flex-wrap justify-between gap-10 text-white lg:mt-60">
         <div className="relative mx-auto h-[400px] w-[300px] lg:w-[46%]">
           <Image

@@ -16,7 +16,7 @@ const faqData = [
 ]
 
 export const Faq = () => (
-  <div className="container mx-auto flex flex-col items-center justify-center">
+  <div className="container mx-auto mt-40 flex flex-col items-center justify-center">
     <Heading className="text-left text-6xl font-bold leading-none tracking-normal">FAQ</Heading>
     <div className="mb-20 mt-16 flex flex-col gap-10">
       {faqData.map((faq, index) => (

@@ -14,10 +14,13 @@ export const HelpGary = () => {
       <div className="container mx-auto mt-16 grid justify-center gap-8 lg:grid-cols-[1fr_auto] lg:justify-between">
         <GarysRoadmap />
         <div className="mt-20 lg:mt-0">
-          <div className="relative sticky top-0">
+          <div className="sticky top-0">
             <BuyGara />
             <div className="absolute -bottom-[7.5rem] -left-3 h-[160px] w-[106%]">
               <Image src="/images/ice_buy_gara.svg" fill />
+            </div>
+            <div className="absolute -left-[150px] top-0 -z-10 h-[363px] w-[324px]">
+              <Image src="/images/help-gary/gary_buy_gara.png" fill />
             </div>
           </div>
         </div>
