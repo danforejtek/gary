@@ -42,7 +42,7 @@ export default function Home() {
         <Image src="/backgrounds/gradient2.png" alt="" fill className="object-cover" />
       </div>
       <section id="earn" className="relative flex snap-start flex-col justify-center px-4 py-12 sm:px-6 sm:py-24">
-        <Image src={`/backgrounds/0.jpg`} alt="" className="-z-10 object-cover" fill />
+        <Image src={`/backgrounds/2.jpg`} alt="" className="-z-10 object-cover" fill />
         <EarnWithGary />
       </section>
       <div className="relative -mb-12 -mt-8 h-40 w-full sm:-mb-16 sm:-mt-10 sm:h-60">

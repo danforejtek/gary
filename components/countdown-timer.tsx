@@ -46,7 +46,7 @@ const CountdownTimer = ({ className }: { className?: string }) => {
       </div>
 
       {/* Hours */}
-      <div className="pb-8 text-xl font-bold text-primary md:text-2xl">:</div>
+      <div className="text-2xl font-bold text-[#061022] text-primary md:text-2xl">:</div>
 
       <div className="flex w-[64px] flex-col items-center rounded-xl bg-gary-blue p-2 font-heading shadow-md md:min-w-[80px] lg:w-[74px]">
         <div className="text-xl font-bold text-gary-yellow md:text-2xl">{String(timeLeft.hours).padStart(2, "0")}</div>
@@ -54,7 +54,7 @@ const CountdownTimer = ({ className }: { className?: string }) => {
       </div>
 
       {/* Minutes */}
-      <div className="pb-8 text-xl font-bold text-primary md:text-2xl">:</div>
+      <div className="text-2xl font-bold text-[#061022] text-primary md:text-2xl">:</div>
 
       <div className="flex w-[64px] flex-col items-center rounded-xl bg-gary-blue p-2 font-heading shadow-md md:min-w-[80px] lg:w-[74px]">
         <div className="text-xl font-bold text-gary-yellow md:text-2xl">
@@ -64,7 +64,7 @@ const CountdownTimer = ({ className }: { className?: string }) => {
       </div>
 
       {/* Seconds */}
-      <div className="pb-8 text-xl font-bold text-primary md:text-2xl">:</div>
+      <div className="text-2xl font-bold text-[#061022] text-primary md:text-2xl">:</div>
 
       <div className="flex w-[64px] flex-col items-center rounded-xl bg-gary-blue p-2 font-heading shadow-md md:min-w-[80px] lg:w-[74px]">
         <div className="text-xl font-bold text-gary-yellow md:text-2xl">

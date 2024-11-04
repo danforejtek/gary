@@ -17,9 +17,5 @@ export const SaveGary = () => (
       <p className="mb-4 text-center text-2xl font-bold text-gary-blue">Gary doesn&apos;t have much time left</p>
       <CountdownTimer />
     </div>
-
-    <div className="mt-6 flex flex-col items-center">
-      <p className="text-center text-2xl font-bold text-white">Find out how you can help Gary</p>
-    </div>
   </div>
 )

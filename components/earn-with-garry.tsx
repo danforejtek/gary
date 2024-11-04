@@ -1,9 +1,13 @@
+"use client"
 import React from "react"
 import { Heading } from "@/components/heading"
 import { Button } from "./ui/button"
 import Image from "next/image"
 
 export const EarnWithGary = () => {
+  const handleClick = (url: string) => {
+    window.open(url, "_blank")
+  }
   return (
     <div className="container mx-auto flex flex-col items-center justify-normal px-6">
       <div className="flex flex-col items-center gap-6">
@@ -23,13 +27,19 @@ export const EarnWithGary = () => {
         </p>
         <p className="max-w-[800px] text-center text-2xl font-bold text-gary-blue">
           Gary isn&apos;t just a cute penguin, but he&apos;s also smart and knows how to make the most money. Gary
-          stakes his GARA coins on the <span className="text-gary-pink">Coingarage</span> exchange with returns of up to
-          35% annually, and you can too!
+          stakes his GARA coins on the{" "}
+          <a href="https://coingarage.io/en" target="_blank">
+            <span className="cursor-pointer text-gary-pink">Coingarage</span>{" "}
+          </a>
+          exchange with returns of up to 35% annually, and you can too!
         </p>
         <Button
           variant="default"
           size="lg"
           className="my-2 h-14 border-none bg-gary-pink px-10 text-2xl shadow-md outline-none hover:bg-gary-pink/80 dark:hover:bg-gary-pink/80"
+          onClick={() => {
+            handleClick("https://trade.coingarage.io/stake")
+          }}
         >
           Stake plans
         </Button>

@@ -9,6 +9,7 @@ const links = [
   { name: "Earn with Gary", anchor: "earn" },
   { name: "Join us!", anchor: "save" },
   { name: "FAQ", anchor: "faq" },
+  {name:"WhitePaper", href: "/whitepaper/whitepaperCG.pdf"},
 ]
 
 export const NavBar = () => {
@@ -21,11 +22,19 @@ export const NavBar = () => {
         <ul className="flex flex-row gap-2">
           {links.map((link) => (
             <li key={link.name}>
-              <AnchorLink anchor={link.anchor}>
-                <Button variant="ghost" className="text-xl font-bold text-white">
-                  {link.name}
-                </Button>
-              </AnchorLink>
+              {link.href ? (
+                <a href={link.href} target="_blank">
+                  <Button variant="ghost" className="text-xl font-bold text-white">
+                    {link.name}
+                  </Button>
+                </a>
+              ) : (
+                <AnchorLink anchor={link.anchor}>
+                  <Button variant="ghost" className="text-xl font-bold text-white">
+                    {link.name}
+                  </Button>
+                </AnchorLink>
+              )}
             </li>
           ))}
         </ul>

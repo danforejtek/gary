@@ -56,7 +56,16 @@ export const SavePenguins = () => {
 
       <div className="mt-40 flex flex-row flex-wrap justify-between lg:mt-40 lg:gap-16">
         <div className="relative h-auto w-full overflow-hidden rounded-3xl lg:w-[712px] lg:max-w-[700px]">
-          <Image src={`/images/penguins.png`} sizes="800px" alt="" fill className="object-cover" />
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/l-hhf3WcSQU"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="object-cover"
+          ></iframe>
         </div>
         <div className="flex flex-col justify-center lg:w-[44%] lg:max-w-[500px]">
           <Heading className="text-center text-6xl font-bold leading-none tracking-normal lg:text-left lg:text-[70px]">

@@ -27,15 +27,15 @@ const slides = [
     story:
       "Gary was fired for redundancy, the company wants to change the brand and Gary, who was the model for the company logo, no longer fits into the new brand ",
     text: "We're going to rebrand, and we don't need you anymore, Gary. Your job with us is done.",
-    storyPosition: "absolute top-[3%] right-0 w-[500px] h-[420px]",
-    textPosition: "absolute top-[14%] left-[2%] w-[500px] h-[280px]",
+    storyPosition: "absolute top-[15%] right-0 w-[500px] h-[420px]",
+    textPosition: "absolute top-[30%] left-[20%] w-[500px] h-[280px]",
     garyPosition: "absolute bottom-0 right-[16%] w-[600px] h-[500px]",
   },
   {
     story: "Gary lost his job, has to pack his things and leaves the company building",
     text: "I helped them build a crypto exchange and now they want to get rid of me",
     storyPosition: "absolute bottom-[3%] right-0 w-[420px] h-[330px]",
-    textPosition: "absolute top-[14%] left-[2%] w-[500px] h-[280px]",
+    textPosition: "absolute top-[35%] left-[15%] w-[500px] h-[280px]",
     garyPosition: "absolute bottom-0 left-[40%] w-[266px] h-[344px]",
   },
   {
@@ -44,7 +44,7 @@ const slides = [
     storySide: "left",
     storyPosition: "absolute bottom-0 left-0 w-[500px] h-[420px]",
     textPosition: "absolute top-1/2 left-1/2",
-    garyPosition: "absolute bottom-[4%] left-[50%] w-[266px] h-[344px]",
+    garyPosition: "absolute bottom-[3%] left-[50%] w-[266px] h-[344px]",
   },
   {
     story: "",
@@ -111,6 +111,7 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
           </Button>
         </div>
       ) : null}
+
       <div className={cn(slide.garyPosition, "-z-10 select-none", isActive ? "animate-fade-in-1" : "opacity-0")}>
         <Image src={`/images/story/slide${slideNumber}/gary.png`} fill alt="Gary" className="-z-10" />
       </div>
@@ -128,7 +129,7 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
       ) : null}
       {slide.text !== "" ? (
         <div className={cn(slide.textPosition, "-z-10 select-none", isActive ? "animate-fade-in-2" : "opacity-0")}>
-          <p className="z-10 py-16 pl-12 pr-20 text-center text-2xl font-bold">{slide.text}</p>
+          <p className="z-10 py-20 pl-20 text-center text-2xl font-bold">{slide.text}</p>
           <Image src={`/images/story/slide${slideNumber}/bubble.png`} fill alt="Text bubble" className="-z-10" />
         </div>
       ) : null}
