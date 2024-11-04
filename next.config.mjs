@@ -1,4 +1,5 @@
 import createNextIntlPlugin from "next-intl/plugin"
+const redeploy = 0.1
 
 const withNextIntl = createNextIntlPlugin()
 
