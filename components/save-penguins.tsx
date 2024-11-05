@@ -4,8 +4,8 @@ import { Button } from "./ui/button"
 
 export const SavePenguins = () => {
   return (
-    <div className="container relative mx-auto flex min-h-screen flex-col items-center">
-      <div className="flex w-full flex-row flex-wrap justify-between gap-10 text-white lg:mt-60">
+    <div className="container relative mx-auto flex min-h-screen flex-col items-center py-20">
+      <div className="mt-20 flex w-full flex-row flex-wrap justify-between gap-10 text-white lg:mt-60">
         <div className="relative mx-auto h-[400px] w-[300px] lg:w-[46%]">
           <Image
             src={`/images/save-penguins/gary_army.png`}
@@ -17,12 +17,12 @@ export const SavePenguins = () => {
           <Image src={`/images/save-penguins/ice.svg`} width={740} height={187} alt="" className="absolute bottom-0" />
         </div>
 
-        <div className="mt-12 flex w-full flex-col px-8 lg:mt-0 lg:w-[46%]">
-          <Heading className="text-4xl font-bold">Join Gary&apos;s army</Heading>
-          <p className="text-2xl text-white">
+        <div className="mt-12 flex w-full flex-col px-8 lg:w-[46%]">
+          <Heading className="text-center text-4xl font-bold lg:text-left">Join Gary&apos;s army</Heading>
+          <p className="text-center text-2xl text-white lg:text-left">
             Show your support for Gary and his penguin family, and follow Gary on social media!
           </p>
-          <div className="mt-8 flex flex-row gap-2 md:gap-6">
+          <div className="mt-8 flex flex-row justify-center gap-2 md:gap-6 lg:justify-center">
             <Button className="size-28 rounded-3xl border-none bg-[#0D1E35] hover:!bg-gary-yellow lg:size-[156px]">
               <Image src={`/images/save-penguins/facebook.svg`} width={104} height={104} alt="" />
             </Button>
@@ -38,10 +38,10 @@ export const SavePenguins = () => {
 
       <div className="mt-40 flex flex-row flex-wrap justify-between lg:mt-40 lg:gap-16">
         <div className="flex flex-col justify-center lg:w-[44%] lg:max-w-[700px]">
-          <Heading className="text-center text-6xl font-bold leading-none tracking-normal lg:text-left lg:text-[70px]">
+          <Heading className="text-center text-4xl font-bold tracking-wider text-gary-yellow lg:text-left">
             Gary got adopted
           </Heading>
-          <p className="mt-4 px-6 text-center text-xl font-bold text-white md:px-0 lg:text-left">
+          <p className="mt-4 px-6 text-center text-2xl font-bold text-white md:px-0 lg:text-left">
             Penguin designated as AP 619 was found abandoned by its colony. Since it’s too young to survive on its own,
             it was taken to a rescue station, where it will stay until it grows strong enough to be released back into
             the wild and rejoin the penguin colony in Simon`&apos;s Town. To support the efforts of this organization
@@ -49,13 +49,13 @@ export const SavePenguins = () => {
             are currently discussing the possibility of setting up a webcam to monitor his growth and eventual release.
           </p>
         </div>
-        <div className="relative h-[650px] w-full overflow-hidden rounded-3xl lg:w-[500px] lg:max-w-[650px]">
+        <div className="relative mt-20 h-[650px] w-full overflow-hidden rounded-3xl lg:mt-0 lg:w-[500px] lg:max-w-[650px]">
           <Image src={`/images/penguin.png`} sizes="650px" alt="" fill className="object-contain" />
         </div>
       </div>
 
-      <div className="mt-40 flex flex-row flex-wrap justify-between lg:mt-40 lg:gap-16">
-        <div className="relative h-auto w-full overflow-hidden rounded-3xl lg:w-[712px] lg:max-w-[700px]">
+      <div className="mt-40 flex flex-row flex-wrap justify-between lg:mt-0 lg:justify-center lg:gap-16">
+        <div className="relative m-auto h-[400px] w-full overflow-hidden rounded-3xl lg:w-[712px] lg:max-w-[700px]">
           <iframe
             width="100%"
             height="100%"
@@ -68,7 +68,7 @@ export const SavePenguins = () => {
           ></iframe>
         </div>
         <div className="flex flex-col justify-center lg:w-[44%] lg:max-w-[500px]">
-          <Heading className="text-center text-6xl font-bold leading-none tracking-normal lg:text-left lg:text-[70px]">
+          <Heading className="mt-20 text-center text-6xl font-bold leading-none tracking-normal lg:text-left lg:text-[70px]">
             Save penguins
           </Heading>
           <p className="mt-4 px-6 text-center text-xl font-bold text-white md:px-0 lg:text-left">

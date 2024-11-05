@@ -22,7 +22,7 @@ export default function Home() {
           alt="Gary"
           width={357}
           height={396}
-          className="absolute right-[8%] top-[50%] -z-10 w-[200px] -translate-y-[30%] sm:w-[257px] md:w-[357px]"
+          className="sm:-[257px] lg:right:-[0%] absolute right-[30%] top-[55%] -z-10 w-[150px] -translate-y-[-20%] sm:right-[5%] sm:-translate-y-[30%] md:w-[250px] lg:w-[357px]"
         />
         <div className="z-20 flex w-full flex-row justify-center">
           <ScrollToComicsButton />
