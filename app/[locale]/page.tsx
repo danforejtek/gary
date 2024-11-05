@@ -10,8 +10,8 @@ import { ScrollToComicsButton } from "@/components/scroll-to-comics-button"
 
 export default function Home() {
   return (
-    <main className="h-screen snap-y snap-mandatory overflow-y-scroll">
-      <section id="home" className="relative flex min-h-screen w-full snap-start flex-col items-center justify-start">
+    <main className="h-screen md:snap-y md:snap-mandatory overflow-y-scroll">
+      <section id="home" className="relative flex min-h-screen w-full md:snap-start flex-col items-center justify-start">
         <NavBar />
         <Image src={`/backgrounds/0.jpg`} alt="" className="-z-10 object-cover" priority quality={100} fill />
         <div className="flex h-full w-full flex-1 flex-col px-4 sm:px-6">
@@ -32,26 +32,26 @@ export default function Home() {
         <Image src="/backgrounds/gradient.png" alt="" fill className="object-cover" />
       </div>
       {/* Pro mobilní zařízení skryjeme sekci about a zobrazíme ji pouze na větších obrazovkách */}
-      <section id="about" className="relative -mt-20 hidden h-screen w-full snap-start lg:block">
+      <section id="about" className="relative -mt-20 hidden h-screen w-full md:snap-start lg:block">
         <GarysStoryCarousel />
       </section>
-      <section id="help-gary" className="snap-start bg-background px-4 py-12 sm:px-6 sm:pb-24">
+      <section id="help-gary" className="md:snap-start bg-background px-4 py-12 sm:px-6 sm:pb-24">
         <HelpGary />
       </section>
-      <div className="relative -mb-12 -mt-12 h-32 w-full snap-start sm:-mb-16 sm:-mt-16 sm:h-48">
+      <div className="relative -mb-12 -mt-12 h-32 w-full md:snap-start sm:-mb-16 sm:-mt-16 sm:h-48">
         <Image src="/backgrounds/gradient2.png" alt="" fill className="object-cover" />
       </div>
-      <section id="earn" className="relative flex snap-start flex-col justify-center px-4 py-12 sm:px-6 sm:py-24">
+      <section id="earn" className="relative flex md:snap-start flex-col justify-center px-4 py-12 sm:px-6 sm:py-24">
         <Image src={`/backgrounds/2.jpg`} alt="" className="-z-10 object-cover" fill />
         <EarnWithGary />
       </section>
       <div className="relative -mb-12 -mt-8 h-40 w-full sm:-mb-16 sm:-mt-10 sm:h-60">
         <Image src={`/backgrounds/ice.svg`} alt="" className="object-cover" fill />
       </div>
-      <section id="save" className="-mt-32 flex snap-start bg-background px-4 sm:-mt-44 sm:px-6">
+      <section id="save" className="-mt-32 flex md:snap-start bg-background px-4 sm:-mt-44 sm:px-6">
         <SavePenguins />
       </section>
-      <section id="faq" className="snap-start bg-background px-4 sm:px-6">
+      <section id="faq" className="md:snap-start bg-background px-4 sm:px-6">
         <Faq />
       </section>
     </main>
