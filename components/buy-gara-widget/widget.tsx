@@ -262,7 +262,7 @@ export function BuyGara({ className }: { className?: string }) {
     <section
       id="buy-gara"
       className={cn(
-        "relative w-full max-w-full flex-1 rounded-2xl bg-gradient-to-b from-white to-[#CFEFFF] p-6 px-5 shadow-md",
+        "relative w-full max-w-full flex-1 rounded-2xl bg-gradient-to-b from-white to-[#CFEFFF] p-6 px-5 shadow-md mt-4",
         className
       )}
     >
@@ -298,6 +298,17 @@ export function BuyGara({ className }: { className?: string }) {
       </div>
       <div className="my-4 flex flex-row justify-center">
         <CountdownTimer />
+      </div>
+      <div className="mt-8 grid grid-cols-[1fr_120px_1fr] gap-2">
+        <div className="relative flex w-full flex-row items-center justify-center">
+          <div className="h-[2px] w-full bg-black dark:bg-neutral-700"></div>
+        </div>
+        <p className="text-center font-heading font-bold">
+          Rounds
+        </p>
+        <div className="relative flex w-full flex-row items-center justify-center">
+          <div className="h-[2px] w-full bg-black dark:bg-neutral-700"></div>
+        </div>
       </div>
       <Rounds />
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-full">

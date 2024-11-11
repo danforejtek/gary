@@ -32,7 +32,7 @@ export default function Home() {
         <Image src="/backgrounds/gradient.png" alt="" fill className="object-cover" />
       </div>
       {/* Pro mobilní zařízení skryjeme sekci about a zobrazíme ji pouze na větších obrazovkách */}
-      <section id="about" className="relative -mt-20 hidden h-screen w-full md:snap-start lg:block">
+      <section id="about" className="relative -mt-20 h-screen w-full md:snap-start">
         <GarysStoryCarousel />
       </section>
       <section id="help-gary" className="md:snap-start bg-background px-4 py-12 sm:px-6 sm:pb-24">

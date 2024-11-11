@@ -26,7 +26,18 @@ export default function RootLayout({
   const messages = useMessages()
 
   return (
-    <html lang="en" className="overflow-hidden">
+    <html lang="en" className="overflow-hidden">      
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SK1L5K78GF"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-SK1L5K78GF');
+          `,
+        }} />
+      </head>
       <body className={`${balooBhai.variable} overflow-hidden antialiased`} suppressHydrationWarning>
         <Providers locale={"en"} messages={messages}>
           {children}

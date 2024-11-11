@@ -19,77 +19,75 @@ const slides = [
   {
     story: "",
     text: "",
-    storyPosition: "absolute top-[3%] right-0 w-[500px] h-[420px]",
-    textPosition: "absolute top-[14%] left-[2%] w-[500px] h-[280px]",
-    garyPosition: "absolute bottom-0 right-[16%] w-[600px] h-[500px]",
+    storyPosition: "absolute lg:top-[3%] lg:right-0 lg:w-[500px] lg:h-[420px] sm:top-[10%] sm:right-[10%] sm:w-[300px] sm:h-[300px]",
+    textPosition: "absolute lg:top-[14%] lg:left-[2%] lg:w-[500px] lg:h-[280px] sm:top-[20%] sm:left-[5%] sm:w-[300px] sm:h-[200px]",
+    garyPosition: "absolute lg:bottom-0 lg:right-[16%] lg:w-[600px] lg:h-[500px] sm:bottom-0 sm:right-[10%] sm:w-[200px] sm:h-[200px]",
   },
   {
-    story:
-      "Gary was fired for redundancy, the company wants to change the brand and Gary, who was the model for the company logo, no longer fits into the new brand ",
+    story: "Gary was fired for redundancy, the company wants to change the brand and Gary, who was the model for the company logo, no longer fits into the new brand ",
     text: "We're going to rebrand, and we don't need you anymore, Gary. Your job with us is done.",
-    storyPosition: "absolute top-[15%] right-0 w-[500px] h-[420px]",
-    textPosition: "absolute top-[30%] left-[20%] w-[500px] h-[280px]",
-    garyPosition: "absolute bottom-0 right-[16%] w-[600px] h-[500px]",
-  },
+    storyPosition: "absolute lg:top-[15%] lg:right-0 lg:w-[500px] lg:h-[420px] sm:top-[15%] sm:right-[5%] sm:w-[300px] sm:h-[200px]",
+    textPosition: "absolute lg:top-[30%] lg:left-[20%] lg:w-[500px] lg:h-[280px] sm:top-[30%] sm:left-[10%] sm:w-[280px] sm:h-[150px]",
+    garyPosition: "absolute lg:bottom-0 right-[16%] lg:w-[600px] lg:h-[500px] sm:bottom- sm:w-[300px] sm:w-[250px]",
+  }, 
   {
     story: "Gary lost his job, has to pack his things and leaves the company building",
     text: "I helped them build a crypto exchange and now they want to get rid of me",
-    storyPosition: "absolute bottom-[3%] right-0 w-[420px] h-[330px]",
-    textPosition: "absolute top-[35%] left-[15%] w-[500px] h-[280px]",
-    garyPosition: "absolute bottom-0 left-[40%] w-[266px] h-[344px]",
+    storyPosition: "absolute lg:bottom-[3%] lg:right-0 lg:w-[420px] lg:h-[330px] sm:bottom-[10%] sm:right-[5%] sm:w-[250px] sm:h-[180px]",
+    textPosition: "absolute lg:top-[55%] lg:left-[15%] lg:w-[500px] lg:h-[280px] sm:top-[55%] sm:left-[10%] sm:w-[250px] sm:h-[100px]",
+    garyPosition: "absolute lg:bottom-0 lg:left-[40%] lg:w-[266px] lg:h-[344px] sm:bottom-0 sm:left-[35%] sm:w-[160px] sm:h-[200px]",
   },
   {
     story: "Gary is sad to have lost his job and wonders what he's going to do now that he's suddenly got an idea!",
     text: "",
-    storySide: "left",
-    storyPosition: "absolute bottom-0 left-0 w-[500px] h-[420px]",
-    textPosition: "absolute top-1/2 left-1/2",
-    garyPosition: "absolute bottom-[3%] left-[50%] w-[266px] h-[344px]",
+    storyPosition: "absolute lg:bottom-0 lg:left-0 lg:w-[500px] lg:h-[420px] sm:bottom-0 sm:left-[5%] sm:w-[200px] sm:h-[150px]",
+    textPosition: "absolute lg:top-1/2 lg:left-1/2 sm:top-1/2 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2",
+    garyPosition: "absolute lg:bottom-[3%] lg:left-[50%] lg:w-[266px] lg:h-[344px] sm:bottom-[5%] sm:left-1/2 sm:w-[160px] sm:h-[180px] sm:transform sm:-translate-x-1/2",
   },
   {
-    story: "",
+    story: "The end",
     text: "They won't just get rid of me, I'll show them I'm important, sell enough GARA coin and take over the company",
-    storyPosition: "absolute top-1/4 left-1/4",
-    textPosition: "absolute top-[18%] right-[12%] w-[500px] h-[280px]",
-    garyPosition: "absolute bottom-[4%] left-[40%] w-[266px] h-[344px]",
+    storyPosition: "absolute lg:top-1/2 lg:left-1/4 sm:top-[40%] sm:left-[20%] sm:w-[200px] sm:h-[100px]",
+    textPosition: "absolute lg:top-[48%] lg:right-[18%] lg:w-[500px] lg:h-[280px] sm:top-[48%] sm:right-[15%] sm:w-[250px] sm:h-[100px]",
+    garyPosition: "absolute lg:bottom-[4%] lg:left-[40%] lg:w-[266px] lg:h-[344px] sm:bottom-[5%] sm:left-[40%] sm:w-[160px] sm:h-[180px]",
   },
-]
+];
 
 function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide: any; carouselApi?: CarouselApi }) {
-  const [isActive, setIsActive] = useState(false)
-  const slideRef = useRef<HTMLDivElement>(null)
+  const [isActive, setIsActive] = useState(false);
+  const slideRef = useRef<HTMLDivElement>(null);
 
   const handleNext = () => {
     if (carouselApi) {
-      carouselApi.scrollNext()
+      carouselApi.scrollNext();
     }
-  }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsActive(true)
+            setIsActive(true);
           } else {
-            setIsActive(false)
+            setIsActive(false);
           }
-        })
+        });
       },
       { threshold: 0.5 }
-    )
+    );
 
-    const currentSlide = slideRef.current
+    const currentSlide = slideRef.current;
     if (currentSlide) {
-      observer.observe(currentSlide)
+      observer.observe(currentSlide);
     }
 
     return () => {
       if (currentSlide) {
-        observer.unobserve(currentSlide)
+        observer.unobserve(currentSlide);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <CarouselItem ref={slideRef} className="relative h-full w-full pl-0">
@@ -99,6 +97,7 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
         className="-z-20 select-none object-cover"
         fill
       />
+
       {slideNumber === 0 ? (
         <div className="flex h-full w-full flex-col items-center overflow-hidden">
           <Heading className="mt-20 text-6xl font-bold">Gary&apos;s story</Heading>
@@ -112,29 +111,106 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
         </div>
       ) : null}
 
-      <div className={cn(slide.garyPosition, "-z-10 select-none", isActive ? "animate-fade-in-1" : "opacity-0")}>
-        <Image src={`/images/story/slide${slideNumber}/gary.png`} fill alt="Gary" className="-z-10" />
-      </div>
-      {slide.story !== "" ? (
+      {/* Hand - Smaller on Mobile */}
+      {slideNumber === 1 && (
         <div
           className={cn(
-            slide.storyPosition,
-            "-z-10 select-none",
-            isActive ? (slide.storySide !== "left" ? "animate-slide-in" : "animate-slide-in-left") : "opacity-0"
+            "absolute left-0 bottom-[5%] w-[150px] h-[100px] sm:w-[700px] sm:h-[500px] m-0 p-0",
+            isActive ? "animate-fade-in-1" : "opacity-0"
           )}
         >
-          <p className="z-10 pb-20 pl-24 pr-16 pt-28 text-xl font-bold">{slide.story}</p>
-          <Image src={`/images/story/slide${slideNumber}/text-bg.png`} fill alt="Story background" className="-z-10" />
+          <Image
+            src={`/images/story/slide1/hand.png`}
+            alt="Pointing hand"
+            fill
+            className="object-contain"
+          />
         </div>
-      ) : null}
-      {slide.text !== "" ? (
-        <div className={cn(slide.textPosition, "-z-10 select-none", isActive ? "animate-fade-in-2" : "opacity-0")}>
-          <p className="z-10 py-20 pl-20 text-center text-2xl font-bold">{slide.text}</p>
-          <Image src={`/images/story/slide${slideNumber}/bubble.png`} fill alt="Text bubble" className="-z-10" />
+      )}
+
+      {/* Gary’s Position */}
+      <div
+        className={cn(
+          slide.garyPosition,
+          "z-100 select-none",
+          isActive ? "animate-fade-in-1" : "opacity-0"
+        )}
+      >
+        <Image
+          src={`/images/story/slide${slideNumber}/gary.png`}
+          fill
+          alt="Gary"
+          className="z-100 object-contain"
+          
+        />
+      </div>
+
+      {/* Story Background (Yellow Box) - Mobile Specific */}
+      <div
+        className={cn(
+          slide.storyPosition,
+          "hidden sm:block", // Only display default positioning on larger screens
+          "-z-10 select-none",
+          isActive ? (slide.storySide !== "left" ? "animate-slide-in" : "animate-slide-in-left") : "opacity-0"
+        )}
+      > 
+        <p
+          className={cn(
+            "z-10 text-xl font-bold",
+            slideNumber === 4 ? "pl-16 pt-8" : "pb-20 pl-20 pr-16 pt-28"
+          )}
+        >
+          {slide.story}
+        </p>
+        <Image
+          src={`/images/story/slide${slideNumber}/text-bg.png`}
+          fill
+          alt="Story background"
+          className="-z-10"
+        />
+      </div>
+
+      {/* Mobile Yellow Box Always at Bottom */}
+      {slideNumber !== 0 && (
+        <div
+          className={cn(
+            "absolute bottom-0 left-0 w-full sm:hidden",
+            isActive ? "animate-fade-in-2" : "opacity-0"
+          )}
+        >
+          <div className="bg-[#FFDA96] h-[200px] border-t-8 border-b-8 border-black flex items-center justify-center">
+            <p className="text-center text-2xl font-bold">{slide.story}</p>
+          </div>
         </div>
-      ) : null}
+      )}
+
+      {/* Text Bubble */}
+      {slide.text !== "" && (
+        <div
+          className={cn(
+            slide.textPosition,
+            "-z-10 select-none",
+            isActive ? "animate-fade-in-2" : "opacity-0"
+          )}
+        >
+          <p
+            className={cn(
+              "z-10 py-20 text-center text-xl font-bold",
+              slideNumber === 2 ? "pl-10 pr-20" : "pl-20 pr-10"
+            )}
+          >
+            {slide.text}
+          </p>
+          <Image
+            src={`/images/story/slide${slideNumber}/bubble.png`}
+            fill
+            alt="Text bubble"
+            className="-z-10"
+          />
+        </div>
+      )}
     </CarouselItem>
-  )
+  );
 }
 
 export function GarysStoryCarousel() {
@@ -196,8 +272,8 @@ export function GarysStoryCarousel() {
             <ChevronRight className="size-24 stroke-white" />
           </Button>
         ) : null}
-        <div className="absolute bottom-0 left-0 z-30 w-full">
-          <div className="flex flex-row justify-center gap-4 py-6">
+        <div className="absolute bottom-[230px] left-0 z-30 w-full sm:bottom-6">
+          <div className="flex flex-row justify-center gap-4 py-2">
             {slides.map((_, index) => {
               return (
                 <Button
@@ -209,7 +285,7 @@ export function GarysStoryCarousel() {
                     current === index ? "bg-gary-light-blue" : ""
                   )}
                 ></Button>
-              )
+              );
             })}
           </div>
         </div>

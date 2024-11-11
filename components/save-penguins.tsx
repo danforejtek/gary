@@ -23,14 +23,14 @@ export const SavePenguins = () => {
             Show your support for Gary and his penguin family, and follow Gary on social media!
           </p>
           <div className="mt-8 flex flex-row justify-center gap-2 md:gap-6 lg:justify-center">
-            <Button className="size-28 rounded-3xl border-none bg-[#0D1E35] hover:!bg-gary-yellow lg:size-[156px]">
-              <Image src={`/images/save-penguins/facebook.svg`} width={104} height={104} alt="" />
+            <Button className="h-auto w-full max-w-[80px] lg:max-w-[156px] aspect-square rounded-3xl border-none bg-[#0D1E35] hover:!bg-gary-yellow">
+              <Image src={`/images/save-penguins/facebook.svg`} width={80} height={80} alt="Facebook" />
             </Button>
-            <Button className="size-28 rounded-3xl border-none bg-[#0D1E35] hover:!bg-gary-yellow lg:size-[156px]">
-              <Image src={`/images/save-penguins/twitter.svg`} width={80} height={80} alt="" />
+            <Button className="h-auto w-full max-w-[80px] lg:max-w-[156px] aspect-square rounded-3xl border-none bg-[#0D1E35] hover:!bg-gary-yellow">
+              <Image src={`/images/save-penguins/twitter.svg`} width={80} height={80} alt="Twitter" />
             </Button>
-            <Button className="size-28 rounded-3xl border-none bg-[#0D1E35] hover:!bg-gary-yellow lg:size-[156px]">
-              <Image src={`/images/save-penguins/telegram.svg`} width={87} height={87} alt="" />
+            <Button className="h-auto w-full max-w-[80px] lg:max-w-[156px] aspect-square rounded-3xl border-none bg-[#0D1E35] hover:!bg-gary-yellow">
+              <Image src={`/images/save-penguins/telegram.svg`} width={80} height={80} alt="Telegram" />
             </Button>
           </div>
         </div>

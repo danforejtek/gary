@@ -137,7 +137,7 @@ export function GarysRoadmap({ steps = garysRoadMapData, activeStep = 0 }: Verti
                 <div className="text-xl font-bold text-gary-light-blue" suppressHydrationWarning>
                   {formatAmount(step.votes, 0)}
                 </div>
-                <h3 className="text-3xl font-bold text-gary-yellow">{step.title}</h3>
+                <h3 className="text-3xl font-bold text-gary-yellow uppercase">{step.title}</h3>
                 <p className="text-xl font-bold">{step.description}</p>
               </motion.div>
               <motion.div
