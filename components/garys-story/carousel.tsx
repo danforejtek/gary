@@ -57,6 +57,21 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
   const [isActive, setIsActive] = useState(false);
   const slideRef = useRef<HTMLDivElement>(null);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const handleNext = () => {
     if (carouselApi) {
       carouselApi.scrollNext();
@@ -117,8 +132,8 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
           className={cn(
             "absolute w-[150px] h-[100px] sm:w-[700px] sm:h-[500px] m-0 p-0",
             isActive ? "animate-fade-in-1" : "opacity-0",
-            "sm:left-0 sm:bottom-[5%] sm:transform-none", // Keep the original desktop positioning
-            "left-14 top-[65%] transform -translate-x-1/2 -translate-y-1/3 sm:translate-y-0" // Adjust for mobile
+            "sm:left-0 sm:bottom-[5%] sm:transform-none",
+            "left-14 top-[65%] transform -translate-x-1/2 -translate-y-1/3 sm:translate-y-0"
           )}
         >
           <Image
@@ -138,17 +153,17 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
             "z-100 select-none",
             isActive ? "animate-fade-in-1" : "opacity-0"
           )}
-          style={{
-            ...(typeof window !== "undefined" && window.innerWidth < 640
+          style={
+            isMobile
               ? {
-                  top: "50%", // Mobile-specific positioning
-                  left: "35%", // Aligns better with the finger
-                  width: "240px", // Scale for mobile
+                  top: "50%",
+                  left: "35%",
+                  width: "240px",
                   height: "240px",
-                  transform: "translate(10%, 20%)", // Fine-tuning placement for mobile
+                  transform: "translate(10%, 20%)",
                 }
-              : {}),
-          }}
+              : {}
+          }
         >
           <Image
             src={`/images/story/slide${slideNumber}/gary.png`}
@@ -163,7 +178,7 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
       <div
         className={cn(
           slide.storyPosition,
-          "hidden sm:block", // Only display default positioning on larger screens
+          "hidden sm:block",
           "-z-10 select-none",
           isActive ? (slide.storySide !== "left" ? "animate-slide-in" : "animate-slide-in-left") : "opacity-0"
         )}
@@ -202,19 +217,19 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
       {slide.text !== "" && (
         <div
           className={cn(
-            slide.textPosition, // Preserves the desktop class-based positioning
+            slide.textPosition,
             "-z-10 select-none",
             isActive ? "animate-fade-in-2" : "opacity-0"
           )}
           style={{
             ...(typeof window !== "undefined" && window.innerWidth < 640
               ? {
-                  top: "250px", // Mobile-specific top position
-                  left: "40%",  // Center horizontally on mobile
-                  maxWidth: "90%", // Resize bubble on mobile
-                  transform: "translateX(-50%)", // Align center horizontally
+                  top: "250px",
+                  left: "40%",
+                  maxWidth: "80%",
+                  transform: "translateX(-50%)",
                 }
-              : {}), // Don't apply styles for desktop
+              : {}),
           }}
         >
           <p
