@@ -46,7 +46,7 @@ const slides = [
   },
   {
     story: "The end",
-    text: "They won't just get rid of me, I'll show them I'm important, sell enough GARA coin and take over the company",
+    text: "I'll show them I'm important, sell enough GARA coin and take over the company",
     storyPosition: "absolute lg:top-1/2 lg:left-1/4 sm:top-[40%] sm:left-[20%] sm:w-[200px] sm:h-[100px]",
     textPosition: "absolute lg:top-[48%] lg:right-[18%] lg:w-[500px] lg:h-[280px] sm:top-[48%] sm:right-[15%] sm:w-[250px] sm:h-[100px]",
     garyPosition: "absolute lg:bottom-[4%] lg:left-[40%] lg:w-[266px] lg:h-[344px] sm:bottom-[5%] sm:left-[40%] sm:w-[160px] sm:h-[180px]",
@@ -215,39 +215,41 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
 
       {/* Text Bubble */}
       {slide.text !== "" && (
-        <div
+      <div
+        className={cn(
+          slide.textPosition,
+          "-z-10 select-none",
+          isActive ? "animate-fade-in-2" : "opacity-0"
+        )}
+        style={
+          isMobile
+            ? {
+                top: "250px", // Adjust top position for mobile
+                left: "40%",  // Center horizontally
+                maxWidth: "80%", // Resize for better fit on small screens
+                transform: "translateX(-50%)", // Center horizontally with translate
+              }
+            : {}
+        }
+      >
+        <p
           className={cn(
-            slide.textPosition,
-            "-z-10 select-none",
-            isActive ? "animate-fade-in-2" : "opacity-0"
+            "z-10 lg:py-20 py-10 text-center font-bold",
+            slideNumber === 2 || (isMobile && slideNumber === 4)
+              ? "text-base lg:text-2xl pl-10 lg:pr-20 pr-12"
+              : "text-base lg:text-2xl lg:pl-20 pl-14 pr-10"
           )}
-          style={{
-            ...(typeof window !== "undefined" && window.innerWidth < 640
-              ? {
-                  top: "250px",
-                  left: "40%",
-                  maxWidth: "80%",
-                  transform: "translateX(-50%)",
-                }
-              : {}),
-          }}
         >
-          <p
-            className={cn(
-              "z-10 py-20 text-center lg:text-2xl sm:text-xl font-bold",
-              slideNumber === 2 ? "pl-10 pr-20" : "pl-20 pr-10"
-            )}
-          >
-            {slide.text}
-          </p>
-          <Image
-            src={`/images/story/slide${slideNumber}/bubble.png`}
-            fill
-            alt="Text bubble"
-            className="-z-10"
-          />
-        </div>
-      )}
+          {slide.text}
+        </p>
+        <Image
+          src={`/images/story/slide${isMobile && slideNumber === 4 ? 2 : slideNumber}/bubble.png`}
+          fill
+          alt="Text bubble"
+          className="-z-10 object-contain"
+        />
+      </div>
+    )}
     </CarouselItem>
   );
 }

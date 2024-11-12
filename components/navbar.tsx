@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -46,7 +46,7 @@ export const NavBar = () => {
 
       <div className="hidden lg:flex lg:items-center lg:justify-end">
         <AnchorLink anchor="buy-gara">
-          <Button className="rounded-full border-transparent sm:bg-[#FFAE17] lg:bg-[#061022] px-4 py-2 text-xl font-bold sm:text-[#061022] lg:text-[#FFAE17] ring-2 ring-transparent ring-offset-0 transition-all hover:bg-[#e69e15] hover:text-[#061022]">
+          <Button className="rounded-full border-transparent px-4 py-2 text-xl font-bold transition-all bg-[#061022] text-[#FFAE17] ring-2 hover:ring-[#FFAE17] hover:ring-offset-4">
             Buy GARA coin
           </Button>
         </AnchorLink>
@@ -96,11 +96,13 @@ export const NavBar = () => {
           </ul>
 
           <div className="mt-8">
-            <AnchorLink anchor="buy-gara">
-              <Button className="rounded-full border-transparent bg-[#FFAE17] px-6 py-3 text-2xl font-bold text-[#061022] ring-2 ring-transparent ring-offset-0 transition-all hover:bg-[#e69e15] hover:text-[#061022]">
-                Buy GARA coin
-              </Button>
-            </AnchorLink>
+          <AnchorLink anchor="buy-gara">
+            <Button
+              className="rounded-full border-transparent px-4 py-2 text-xl font-bold transition-all bg-[#061022] text-[#FFAE17] ring-2 ring-[#FFAE17] ring-offset-2 hover:bg-[#FFAE17] hover:text-[#061022] hover:ring-[#061022] hover:ring-offset-2"
+            >
+              Buy GARA coin
+            </Button>
+          </AnchorLink>
           </div>
 
           <div className="mt-8 flex flex-row gap-4">
