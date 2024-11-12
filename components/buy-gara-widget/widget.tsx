@@ -25,7 +25,7 @@ import { CurrencySelect } from "@/components/buy-gara-widget/currency-select"
 import { getTokenBalance } from "@/lib/get-balance"
 
 import Arrow from "@/public/images/gara-coin/arrow.svg"
-import Polygon from "@/public/images/gara-coin/polygon.svg"
+import Polygon from "@/public/images/gara-coin/pol.png"
 import CountdownTimer from "@/components/countdown-timer"
 import { Rounds } from "@/components/rounds"
 
@@ -262,7 +262,7 @@ export function BuyGara({ className }: { className?: string }) {
     <section
       id="buy-gara"
       className={cn(
-        "relative w-full max-w-full flex-1 rounded-2xl bg-gradient-to-b from-white to-[#CFEFFF] p-6 px-5 shadow-md mt-4",
+        "relative w-full max-w-full flex-1 rounded-t-2xl bg-gradient-to-b from-white to-[#CFEFFF] p-6 px-5 shadow-md mt-4",
         className
       )}
     >
@@ -355,6 +355,7 @@ export function BuyGara({ className }: { className?: string }) {
           senderChainTxUrl={chainTxUrl}
         />
       </form>
+      {/*
       <div className="mt-6 flex flex-row justify-between gap-2 px-4 font-bold">
         <Button variant="link" size="sm" className="p-0 font-bold text-foreground" asChild>
           <a
@@ -371,7 +372,6 @@ export function BuyGara({ className }: { className?: string }) {
           </a>
         </Button>
         <div className="flex items-center justify-center">
-          {/* <Arrow className="stroke-black dark:stroke-white" /> */}
         </div>
         <Button variant="link" className="p-0 font-bold">
           <a href="https://trade.coingarage.io/exchange/GARA-EUR" target="_blank" rel="noreferrer noopener">
@@ -379,12 +379,18 @@ export function BuyGara({ className }: { className?: string }) {
           </a>
         </Button>
       </div>
-      {/* <p className="mt-4 flex flex-row items-center justify-center">
-        <span className="leading-none">{t("poweredBy")}</span>
-        <span className="ml-2 inline-flex items-center">
-          <Polygon className="fill-black dark:fill-white" width="84" height="16" />
+      */}
+      <p className="my-4 flex items-center justify-center space-x-2">
+        <span className="leading-none text-xl">{t("poweredBy")}</span>
+        <span className="inline-flex items-center">
+          <Image
+            src={Polygon}
+            alt="Polygon"
+            width={80}
+            height={40}
+          />
         </span>
-      </p> */}
+      </p>
     </section>
   )
 }

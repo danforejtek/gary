@@ -19,7 +19,7 @@ const slides = [
   {
     story: "",
     text: "",
-    storyPosition: "absolute lg:top-[3%] lg:right-0 lg:w-[500px] lg:h-[420px] sm:top-[10%] sm:right-[10%] sm:w-[300px] sm:h-[300px]",
+    storyPosition: "absolute lg:top-[3%] lg:right-0 lg:w-[500px] lg:h-[420px] sm:top-[20%] sm:right-[10%] sm:w-[300px] sm:h-[300px]",
     textPosition: "absolute lg:top-[14%] lg:left-[2%] lg:w-[500px] lg:h-[280px] sm:top-[20%] sm:left-[5%] sm:w-[300px] sm:h-[200px]",
     garyPosition: "absolute lg:bottom-0 lg:right-[16%] lg:w-[600px] lg:h-[500px] sm:bottom-0 sm:right-[10%] sm:w-[200px] sm:h-[200px]",
   },
@@ -115,8 +115,10 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
       {slideNumber === 1 && (
         <div
           className={cn(
-            "absolute left-0 bottom-[5%] w-[150px] h-[100px] sm:w-[700px] sm:h-[500px] m-0 p-0",
-            isActive ? "animate-fade-in-1" : "opacity-0"
+            "absolute w-[150px] h-[100px] sm:w-[700px] sm:h-[500px] m-0 p-0",
+            isActive ? "animate-fade-in-1" : "opacity-0",
+            "sm:left-0 sm:bottom-[5%] sm:transform-none", // Keep the original desktop positioning
+            "left-14 top-[65%] transform -translate-x-1/2 -translate-y-1/3 sm:translate-y-0" // Adjust for mobile
           )}
         >
           <Image
@@ -129,21 +131,33 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
       )}
 
       {/* Gary’s Position */}
-      <div
-        className={cn(
-          slide.garyPosition,
-          "z-100 select-none",
-          isActive ? "animate-fade-in-1" : "opacity-0"
-        )}
-      >
-        <Image
-          src={`/images/story/slide${slideNumber}/gary.png`}
-          fill
-          alt="Gary"
-          className="z-100 object-contain"
-          
-        />
-      </div>
+      {slideNumber !== 0 && (
+        <div
+          className={cn(
+            slide.garyPosition,
+            "z-100 select-none",
+            isActive ? "animate-fade-in-1" : "opacity-0"
+          )}
+          style={{
+            ...(typeof window !== "undefined" && window.innerWidth < 640
+              ? {
+                  top: "50%", // Mobile-specific positioning
+                  left: "35%", // Aligns better with the finger
+                  width: "240px", // Scale for mobile
+                  height: "240px",
+                  transform: "translate(10%, 20%)", // Fine-tuning placement for mobile
+                }
+              : {}),
+          }}
+        >
+          <Image
+            src={`/images/story/slide${slideNumber}/gary.png`}
+            fill
+            alt="Gary"
+            className="object-contain"
+          />
+        </div>
+      )}
 
       {/* Story Background (Yellow Box) - Mobile Specific */}
       <div
@@ -188,14 +202,24 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
       {slide.text !== "" && (
         <div
           className={cn(
-            slide.textPosition,
+            slide.textPosition, // Preserves the desktop class-based positioning
             "-z-10 select-none",
             isActive ? "animate-fade-in-2" : "opacity-0"
           )}
+          style={{
+            ...(typeof window !== "undefined" && window.innerWidth < 640
+              ? {
+                  top: "250px", // Mobile-specific top position
+                  left: "40%",  // Center horizontally on mobile
+                  maxWidth: "90%", // Resize bubble on mobile
+                  transform: "translateX(-50%)", // Align center horizontally
+                }
+              : {}), // Don't apply styles for desktop
+          }}
         >
           <p
             className={cn(
-              "z-10 py-20 text-center text-xl font-bold",
+              "z-10 py-20 text-center lg:text-2xl sm:text-xl font-bold",
               slideNumber === 2 ? "pl-10 pr-20" : "pl-20 pr-10"
             )}
           >
