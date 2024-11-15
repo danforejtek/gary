@@ -154,13 +154,19 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
           )}
           style={
             isMobile
-              ? {
-                  top: "50%",
-                  left: "35%",
-                  width: "240px",
-                  height: "240px",
-                  transform: "translate(10%, 20%)",
-                }
+              ? slideNumber === 0
+                ? {
+                    bottom: "-30px",
+                    width: "240px",
+                    height: "240px",
+                  }
+                : {
+                    top: "50%",
+                    left: "35%",
+                    width: "240px",
+                    height: "240px",
+                    transform: "translate(10%, 20%)",
+                  }
               : {}
           }
         >
