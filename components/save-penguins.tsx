@@ -24,13 +24,13 @@ export const SavePenguins = () => {
           </p>
           <div className="mt-8 flex flex-row justify-center gap-2 md:gap-6 lg:justify-center">
             <Button className="h-auto w-full max-w-[80px] lg:max-w-[156px] aspect-square rounded-3xl border-none bg-[#0D1E35] hover:!bg-gary-yellow">
-              <Image src={`/images/save-penguins/facebook.svg`} width={80} height={80} alt="Facebook" />
+              <a href="https://www.facebook.com/profile.php?id=61568221981440"><Image src={`/images/save-penguins/facebook.svg`} width={80} height={80} alt="Facebook" /></a>
             </Button>
             <Button className="h-auto w-full max-w-[80px] lg:max-w-[156px] aspect-square rounded-3xl border-none bg-[#0D1E35] hover:!bg-gary-yellow">
-              <Image src={`/images/save-penguins/twitter.svg`} width={80} height={80} alt="Twitter" />
+              <a href="https://x.com/gary_help32532"><Image src={`/images/save-penguins/twitter.svg`} width={80} height={80} alt="Twitter" /></a>
             </Button>
             <Button className="h-auto w-full max-w-[80px] lg:max-w-[156px] aspect-square rounded-3xl border-none bg-[#0D1E35] hover:!bg-gary-yellow">
-              <Image src={`/images/save-penguins/telegram.svg`} width={80} height={80} alt="Telegram" />
+              <a href="https://t.me/helpgary"><Image src={`/images/save-penguins/telegram.svg`} width={80} height={80} alt="Telegram" /></a>
             </Button>
           </div>
         </div>

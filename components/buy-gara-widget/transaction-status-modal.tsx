@@ -36,7 +36,7 @@ export default function TransactionStatusModal({ open, setOpen, toggleOpen, send
         onInteractOutside={(e) => (isPending ? e.preventDefault() : null)}
       >
         <DialogHeader>
-          <DialogTitle className="sr-only">Transaction</DialogTitle>
+          <DialogTitle className="sr-only text-white">Transaction</DialogTitle>
           {/* <DialogDescription>View the status of your outgoing and incoming transactions.</DialogDescription> */}
         </DialogHeader>
         <div className="grid gap-6">
@@ -58,14 +58,14 @@ export default function TransactionStatusModal({ open, setOpen, toggleOpen, send
                 </div>
               ) : null}
             </div>
-            <h3 className="mb-2 w-full text-center font-heading text-lg font-medium">
+            <h3 className="mb-2 w-full text-center font-heading text-lg font-medium text-white">
               <ArrowUpRight className="inline-block h-6 w-6" />
               Outgoing Transaction
             </h3>
             <div className="grid gap-4">
               <div className="grid grid-rows-[1fr_auto] items-center gap-4 rounded-md border border-neutral-200 bg-neutral-100 p-4 dark:border-neutral-700 dark:bg-neutral-800 md:grid-cols-[1fr_auto] md:grid-rows-1">
                 <div>
-                  <p className="text-sm font-medium">Transaction Hash</p>
+                  <p className="text-sm font-medium text-white">Transaction Hash</p>
                   {outcomingTransaction.txHash ? (
                     <a
                       href={`${senderChainTxUrl}${outcomingTransaction.txHash}`}
@@ -109,14 +109,14 @@ export default function TransactionStatusModal({ open, setOpen, toggleOpen, send
             </div>
           </div>
           <div>
-            <h3 className="mb-2 w-full text-center font-heading text-lg font-medium">
+            <h3 className="mb-2 w-full text-center font-heading text-lg font-medium text-white">
               <ArrowDownRight className="inline-block h-6 w-6" />
               Incoming Transaction
             </h3>
             <div className="grid gap-4">
               <div className="grid grid-rows-[1fr_auto] items-center gap-4 rounded-md border border-neutral-200 bg-neutral-100 p-4 dark:border-neutral-700 dark:bg-neutral-800 md:grid-cols-[1fr_auto] md:grid-rows-1">
                 <div>
-                  <p className="text-sm font-medium">Transaction Hash</p>
+                  <p className="text-sm font-medium text-white">Transaction Hash</p>
                   {incomingTransaction.txHash ? (
                     <a
                       href={`https://polygonscan.com/tx/${incomingTransaction.txHash}`}
@@ -152,7 +152,14 @@ export default function TransactionStatusModal({ open, setOpen, toggleOpen, send
                       <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-white">
                         <Check className="h-4 w-4" />
                       </div>
-                      <p className="text-sm font-medium text-green-500">Transaction Completed</p>
+                      <p className="text-sm font-medium text-green-500">Thank you for helping Gary out!</p>
+                      <div className="mt-2 flex justify-center">
+                        <img
+                          src="/images/help-gary/rescue.png"
+                          alt="Gary"
+                          className="h-12 w-12"
+                        />
+                      </div>
                     </>
                   ) : null}
                 </div>
@@ -163,7 +170,7 @@ export default function TransactionStatusModal({ open, setOpen, toggleOpen, send
         <DialogFooter>
           <div>
             {!isPending ? (
-              <Button type="button" onClick={toggleOpen}>
+              <Button type="button" onClick={toggleOpen} className="bg-yellow">
                 Close
               </Button>
             ) : null}

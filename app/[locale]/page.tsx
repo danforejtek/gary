@@ -6,6 +6,7 @@ import { GarysStoryCarousel } from "@/components/garys-story/carousel"
 import { EarnWithGary } from "@/components/earn-with-garry"
 import { SavePenguins } from "@/components/save-penguins"
 import { Faq } from "@/components/faq"
+import { Footer } from "@/components/footer"
 import { ScrollToComicsButton } from "@/components/scroll-to-comics-button"
 
 export default function Home() {
@@ -53,6 +54,9 @@ export default function Home() {
       </section>
       <section id="faq" className="md:snap-start bg-background px-4 sm:px-6">
         <Faq />
+      </section>
+      <section id="footer" className="md:snap-start bg-[#050D1C] px-4 sm:px-6">
+        <Footer />
       </section>
     </main>
   )

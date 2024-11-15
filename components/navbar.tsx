@@ -10,7 +10,7 @@ const links = [
   { name: "Earn with Gary", anchor: "earn" },
   { name: "Join us!", anchor: "save" },
   { name: "FAQ", anchor: "faq" },
-  { name: "WhitePaper", href: "/whitepaper/whitepaperCG.pdf" },
+  { name: "WhitePaper", href: "/whitepaper/WhitepaperCG.pdf" },
 ];
 
 export const NavBar = () => {
@@ -46,7 +46,7 @@ export const NavBar = () => {
 
       <div className="hidden lg:flex lg:items-center lg:justify-end">
         <AnchorLink anchor="buy-gara">
-          <Button className="rounded-full border-transparent px-4 py-2 text-xl font-bold transition-all bg-[#061022] text-[#FFAE17] ring-2 hover:ring-[#FFAE17] hover:ring-offset-4">
+          <Button className="rounded-full border-transparent px-4 py-2 text-xl font-bold transition-all bg-[#061022] !text-[#FFAE17] ring-2 hover:ring-[#FFAE17] hover:ring-offset-4">
             Buy GARA coin
           </Button>
         </AnchorLink>
@@ -107,13 +107,13 @@ export const NavBar = () => {
 
           <div className="mt-8 flex flex-row gap-4">
             <Button className="h-12 w-12 rounded-full border-none bg-[#0D1E35] hover:!bg-gary-yellow flex items-center justify-center">
-              <Image src={`/images/save-penguins/facebook.svg`} width={24} height={24} alt="Facebook" />
+              <a href="https://www.facebook.com/profile.php?id=61568221981440"><Image src={`/images/save-penguins/facebook.svg`} width={24} height={24} alt="Facebook" /></a>
             </Button>
             <Button className="h-12 w-12 rounded-full border-none bg-[#0D1E35] hover:!bg-gary-yellow flex items-center justify-center">
-              <Image src={`/images/save-penguins/twitter.svg`} width={24} height={24} alt="Twitter" />
+              <a href="https://x.com/gary_help32532"><Image src={`/images/save-penguins/twitter.svg`} width={24} height={24} alt="Twitter" /></a>
             </Button>
             <Button className="h-12 w-12 rounded-full border-none bg-[#0D1E35] hover:!bg-gary-yellow flex items-center justify-center">
-              <Image src={`/images/save-penguins/telegram.svg`} width={24} height={24} alt="Telegram" />
+              <a href="https://t.me/helpgary"><Image src={`/images/save-penguins/telegram.svg`} width={24} height={24} alt="Telegram" /></a>
             </Button>
           </div>
         </div>

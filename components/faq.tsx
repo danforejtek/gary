@@ -15,7 +15,7 @@ const faqData = [
   },
   {
     title: "Tokenomics",
-    text: "10% GARA in OTC form after admission to trading on the issuer's trading platform, 11% Stake rewards, 11% Reserved for public pre-sale, 10% Angel investors, 22% company reserves, 11% founding team, 10% for marketing use, 15% to be burned if requirements are met",
+    text: "11% Stake rewards, 21% Reserved for public pre-sale, 10% Angel investors, 11% company reserves, 11% liquidity, 11% founding team, 10% for marketing use, 15% to be burned if requirements are met",
   },
 ];
 
@@ -36,7 +36,7 @@ export const Faq = () => {
             className="mx-auto flex w-full flex-col gap-4 rounded-3xl bg-[#0D1E35] px-6 py-8 lg:w-3/5 lg:px-16 lg:py-12"
           >
             <div className="flex items-center justify-between">
-              <Heading className="text-center text-4xl font-bold lg:text-left">{faq.title}</Heading>
+              <Heading className="text-4xl font-bold text-left">{faq.title}</Heading>
               <button
                 onClick={() => toggleFaq(index)}
                 className="text-white focus:outline-none"
@@ -44,9 +44,15 @@ export const Faq = () => {
                 {activeIndex === index ? <ChevronUp size={32} /> : <ChevronDown size={32} />}
               </button>
             </div>
-            {activeIndex === index && (
-              <p className="text-center text-2xl font-bold text-white lg:text-left">{faq.text}</p>
-            )}
+            <div
+              className={`overflow-hidden transition-all duration-300 ${
+                activeIndex === index ? "max-h-screen" : "max-h-0"
+              }`}
+            >
+              <p className="text-2xl font-bold text-white text-left">
+                {faq.text}
+              </p>
+            </div>
           </div>
         ))}
       </div>

@@ -45,6 +45,7 @@ export const ConnectButton = ({ label, showBalance }) => {
                     onClick={openChainModal}
                     style={{ display: "flex", alignItems: "center" }}
                     type="button"
+                    className= "text-[#FFAE17]"
                   >
                     {chain.hasIcon && (
                       <div
@@ -64,7 +65,7 @@ export const ConnectButton = ({ label, showBalance }) => {
                     )}
                     {chain.name}
                   </Button>
-                  <Button variant="outline" onClick={openAccountModal} type="button" className="w-full">
+                  <Button variant="outline" onClick={openAccountModal} type="button" className="w-full text-[#FFAE17]">
                     {formatAddress(account.address, 12)}
                     {showBalance ? ` (${account.displayBalance})` : ""}
                   </Button>

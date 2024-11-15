@@ -21,20 +21,20 @@ const slides = [
     text: "",
     storyPosition: "absolute lg:top-[3%] lg:right-0 lg:w-[500px] lg:h-[420px] sm:top-[20%] sm:right-[10%] sm:w-[300px] sm:h-[300px]",
     textPosition: "absolute lg:top-[14%] lg:left-[2%] lg:w-[500px] lg:h-[280px] sm:top-[20%] sm:left-[5%] sm:w-[300px] sm:h-[200px]",
-    garyPosition: "absolute lg:bottom-0 lg:right-[16%] lg:w-[600px] lg:h-[500px] sm:bottom-0 sm:right-[10%] sm:w-[200px] sm:h-[200px]",
+    garyPosition: "absolute lg:-bottom-6 right-[16%] lg:w-[600px] lg:h-[500px] sm:bottom- sm:w-[300px] sm:w-[250px]",
   },
   {
     story: "Gary was fired for redundancy, the company wants to change the brand and Gary, who was the model for the company logo, no longer fits into the new brand ",
     text: "We're going to rebrand, and we don't need you anymore, Gary. Your job with us is done.",
     storyPosition: "absolute lg:top-[15%] lg:right-0 lg:w-[500px] lg:h-[420px] sm:top-[15%] sm:right-[5%] sm:w-[300px] sm:h-[200px]",
     textPosition: "absolute lg:top-[30%] lg:left-[20%] lg:w-[500px] lg:h-[280px] sm:top-[30%] sm:left-[10%] sm:w-[280px] sm:h-[150px]",
-    garyPosition: "absolute lg:bottom-0 right-[16%] lg:w-[600px] lg:h-[500px] sm:bottom- sm:w-[300px] sm:w-[250px]",
+    garyPosition: "absolute lg:-bottom-6 right-[16%] lg:w-[600px] lg:h-[500px] sm:bottom- sm:w-[300px] sm:w-[250px]",
   }, 
   {
     story: "Gary lost his job, has to pack his things and leaves the company building",
     text: "I helped them build a crypto exchange and now they want to get rid of me",
     storyPosition: "absolute lg:bottom-[3%] lg:right-0 lg:w-[420px] lg:h-[330px] sm:bottom-[10%] sm:right-[5%] sm:w-[250px] sm:h-[180px]",
-    textPosition: "absolute lg:top-[55%] lg:left-[15%] lg:w-[500px] lg:h-[280px] sm:top-[55%] sm:left-[10%] sm:w-[250px] sm:h-[100px]",
+    textPosition: "absolute lg:top-[45%] lg:left-[15%] lg:w-[500px] lg:h-[280px] sm:top-[55%] sm:left-[10%] sm:w-[250px] sm:h-[100px]",
     garyPosition: "absolute lg:bottom-0 lg:left-[40%] lg:w-[266px] lg:h-[344px] sm:bottom-0 sm:left-[35%] sm:w-[160px] sm:h-[200px]",
   },
   {
@@ -121,7 +121,7 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
             size="lg"
             className="mt-[30vh] border-none bg-black/70 px-10 py-10 text-3xl hover:!bg-black/80"
           >
-            Click for continue
+            Read my story
           </Button>
         </div>
       ) : null}
@@ -146,7 +146,6 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
       )}
 
       {/* Gary’s Position */}
-      {slideNumber !== 0 && (
         <div
           className={cn(
             slide.garyPosition,
@@ -172,38 +171,40 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
             className="object-contain"
           />
         </div>
-      )}
 
       {/* Story Background (Yellow Box) - Mobile Specific */}
-      <div
-        className={cn(
-          slide.storyPosition,
-          "hidden sm:block",
-          "-z-10 select-none",
-          isActive ? (slide.storySide !== "left" ? "animate-slide-in" : "animate-slide-in-left") : "opacity-0"
-        )}
-      > 
-        <p
+      {slideNumber !== 4 && (
+        <div
           className={cn(
-            "z-10 text-xl font-bold",
-            slideNumber === 4 ? "pl-16 pt-8" : "pb-20 pl-20 pr-16 pt-28"
+            slide.storyPosition,
+            "hidden sm:block",
+            "-z-10 select-none",
+            isActive ? (slide.storySide !== "left" ? "animate-slide-in" : "animate-slide-in-left") : "opacity-0"
           )}
-        >
-          {slide.story}
-        </p>
-        <Image
-          src={`/images/story/slide${slideNumber}/text-bg.png`}
-          fill
-          alt="Story background"
-          className="-z-10"
-        />
-      </div>
+        > 
+          <p
+            className={cn(
+              "z-10 text-xl font-bold",
+              slideNumber === 4 ? "pl-16 pt-8" : "pb-20 pl-20 pr-16 pt-28"
+            )}
+          >
+            {slide.story}
+          </p>
+          <Image
+            src={`/images/story/slide${slideNumber}/text-bg.png`}
+            fill
+            alt="Story background"
+            className="-z-10"
+          />
+        </div>
+      )}
 
       {/* Mobile Yellow Box Always at Bottom */}
       {slideNumber !== 0 && (
         <div
           className={cn(
-            "absolute bottom-0 left-0 w-full sm:hidden",
+            "absolute bottom-0 left-0 w-full",
+            slideNumber === 4 ? "lg:hidden" : "sm:hidden", // Hide only on large screens for slide 4
             isActive ? "animate-fade-in-2" : "opacity-0"
           )}
         >
@@ -215,41 +216,41 @@ function Slide({ slideNumber, slide, carouselApi }: { slideNumber: number; slide
 
       {/* Text Bubble */}
       {slide.text !== "" && (
-      <div
-        className={cn(
-          slide.textPosition,
-          "-z-10 select-none",
-          isActive ? "animate-fade-in-2" : "opacity-0"
-        )}
-        style={
-          isMobile
-            ? {
-                top: "250px", // Adjust top position for mobile
-                left: "40%",  // Center horizontally
-                maxWidth: "80%", // Resize for better fit on small screens
-                transform: "translateX(-50%)", // Center horizontally with translate
-              }
-            : {}
-        }
-      >
-        <p
+        <div
           className={cn(
-            "z-10 lg:py-20 py-10 text-center font-bold",
-            slideNumber === 2 || (isMobile && slideNumber === 4)
-              ? "text-base lg:text-2xl pl-10 lg:pr-20 pr-12"
-              : "text-base lg:text-2xl lg:pl-20 pl-14 pr-10"
+            slide.textPosition,
+            "-z-10 select-none",
+            isActive ? "animate-fade-in-2" : "opacity-0"
           )}
+          style={
+            isMobile
+              ? {
+                  top: "250px",
+                  left: "40%",
+                  maxWidth: "80%",
+                  transform: "translateX(-50%)",
+                }
+              : {}
+          }
         >
+          <p
+            className={cn(
+              "z-10 py-20 text-center font-bold",
+              slideNumber === 2 || (isMobile && slideNumber === 4)
+                ? "text-sm lg:text-2xl pl-10 lg:pr-20 pr-12"
+                : "text-sm lg:text-2xl lg:pl-20 pl-14 pr-10"
+            )}
+          >
           {slide.text}
-        </p>
-        <Image
-          src={`/images/story/slide${isMobile && slideNumber === 4 ? 2 : slideNumber}/bubble.png`}
-          fill
-          alt="Text bubble"
-          className="-z-10 object-contain"
-        />
-      </div>
-    )}
+          </p>
+          <Image
+            src={`/images/story/slide${isMobile && slideNumber === 4 ? 2 : slideNumber}/bubble.png`}
+            fill
+            alt="Text bubble"
+            className="-z-10 object-contain"
+          />
+        </div>
+      )}
     </CarouselItem>
   );
 }

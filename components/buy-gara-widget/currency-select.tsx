@@ -59,9 +59,10 @@ export function CurrencySelect({ form }: { form: any }) {
                           onSelect={() => {
                             form.setValue("token", token.value)
                           }}
+                          className="text-white"
                         >
                           <Check
-                            className={cn("mr-2 h-4 w-4", token.value === field.value ? "opacity-100" : "opacity-0")}
+                            className={cn("mr-2 h-4 w-4", token.value === field.value ? "opacity-100" : "opacity-10")}
                           />
                           <Image
                             src={`/icons/coins/${token.value?.toLowerCase()}.png`}
